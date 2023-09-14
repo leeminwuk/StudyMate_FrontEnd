@@ -1,17 +1,13 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Import the useNavigation hook
-
+import { TouchableOpacity, Text, View, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const MyGoogleLoginButton = () => {
-    // Replace the handleGoogleLogin function with your actual Google login logic
-    const navigation = useNavigation(); // Get the navigation object using the useNavigation hook
+    const navigation = useNavigation();
 
     const handleGoogleLogin = () => {
         console.log('Google login clicked!');
-        // Implement the Google login logic here
         navigation.navigate('Home');
-
     };
 
     return (
@@ -34,9 +30,21 @@ const MyGoogleLoginButton = () => {
                 flexDirection: 'row',
             }}
         >
-            <Text style={{ marginLeft: 50, marginRight: 26, marginTop: 6, marginBottom: 6, color: '#000000' }}>
-                구글로 로그인하기
-            </Text>
+            {/* Add the image here */}
+            <Image
+                source={require('../assets/google.png')}
+                style={{
+                    width: 28,
+                    height: 28,
+                    flexShrink: 0,
+                    marginLeft: 16, 
+                }}
+            />
+            <View style={{ marginLeft: 16, flexDirection: 'row' }}>
+                <Text style={{ color: '#000000' }}>
+                    구글로 로그인하기
+                </Text>
+            </View>
         </TouchableOpacity>
     );
 };

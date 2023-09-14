@@ -2,17 +2,17 @@ import React from 'react';
 import { TouchableOpacity, Text, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const MyKakaoLoginButton = () => {
+const MyAppleLoginButton = () => {
     const navigation = useNavigation();
 
-    const handleKakaoLogin = () => {
-        console.log('Kakao login clicked!');
+    const handleAppleLogin = () => {
+        console.log('Apple login clicked!');
         navigation.navigate('Home');
     };
 
     return (
         <TouchableOpacity
-            onPress={handleKakaoLogin}
+            onPress={handleAppleLogin}
             style={{
                 width: 300,
                 height: 44,
@@ -20,7 +20,7 @@ const MyKakaoLoginButton = () => {
                 marginBottom: 8,
                 fontSize: 12,
                 color: '#4a4a4a',
-                backgroundColor: '#FFE500', // Yellow background color for Kakao
+                backgroundColor: '#000',
                 shadowColor: '#9b9b9b',
                 shadowOffset: { width: 0, height: 2 },
                 shadowOpacity: 1,
@@ -32,7 +32,7 @@ const MyKakaoLoginButton = () => {
         >
             {/* Add the image here */}
             <Image
-                source={require('../assets/kakao.png')}
+                source={require('../assets/apple.png')}
                 style={{
                     width: 28,
                     height: 28,
@@ -41,12 +41,12 @@ const MyKakaoLoginButton = () => {
                 }}
             />
             <View style={{ marginLeft: 16, flexDirection: 'row' }}>
-                <Text style={{ color: '#000000' }}>
-                    카카오로 로그인하기
+                <Text style={{ color: '#ffffff' }}>
+                    애플로 로그인하기
                 </Text>
             </View>
         </TouchableOpacity>
     );
 };
 
-export default MyKakaoLoginButton;
+export default MyAppleLoginButton;

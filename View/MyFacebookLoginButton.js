@@ -1,11 +1,12 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; 
+import { TouchableOpacity, Text, View, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 const MyFacebookLoginButton = () => {
-    const navigation = useNavigation(); 
+    const navigation = useNavigation();
+
     const handleFacebookLogin = () => {
         console.log('Facebook login clicked!');
-
         navigation.navigate('Home');
     };
 
@@ -19,20 +20,31 @@ const MyFacebookLoginButton = () => {
                 marginBottom: 8,
                 fontSize: 12,
                 color: '#4a4a4a',
-                backgroundColor: '#3b5998',
+                backgroundColor: '#000',
                 shadowColor: '#9b9b9b',
                 shadowOffset: { width: 0, height: 2 },
                 shadowOpacity: 1,
                 shadowRadius: 0,
-                textAlign: 'center',
                 display: 'flex',
                 alignItems: 'center',
                 flexDirection: 'row',
             }}
         >
-            <Text style={{ marginLeft: 50, marginRight: 26, marginTop: 6, marginBottom: 6, color: '#ffffff' }}>
-                페이스북으로 로그인하기
-            </Text>
+            {/* Add the image here */}
+            <Image
+                source={require('../assets/apple.png')}
+                style={{
+                    width: 28,
+                    height: 28,
+                    flexShrink: 0,
+                    marginLeft: 16, // Adjust the margin as needed
+                }}
+            />
+            <View style={{ marginLeft: 16, flexDirection: 'row' }}>
+                <Text style={{ color: '#ffffff' }}>
+                    애플로 로그인하기
+                </Text>
+            </View>
         </TouchableOpacity>
     );
 };
