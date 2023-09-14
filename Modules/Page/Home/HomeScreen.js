@@ -1,15 +1,15 @@
 import React from 'react';
 import { ScrollView, View, Text, TouchableOpacity, Image, StatusBar, Platform } from 'react-native';
 import Svg, { Rect } from 'react-native-svg';
-import styles from './styles'; // Import styles from styles.js
-import ProgressBar from './ProgressBar'; // Import the ProgressBar component
-import SearchBar from './SearchBar'; // Import the SearchBar component
-import CustomTuner from './CustomTuner';
+import styles from '../../styles'; // Import styles from styles.js
+import ProgressBar from '../../ProgressBar'; // Import the ProgressBar component
+import SearchBar from '../../SearchBar'; // Import the SearchBar component
+import CustomTuner from '../../CustomTuner';
 
-import BottomNavigationBar from './BottomNavigationBar';
+import BottomNavigationBar from '../../BottomNavigationBar';
 
 const HomeScreen = ({ navigation }) => {
-  const progressLevel = 80; // Example: 50% progress
+  const progressLevel = 80; 
 
   const handleSearch = () => {
     navigation.navigate('Search');
@@ -24,14 +24,14 @@ const HomeScreen = ({ navigation }) => {
         <View style={[styles.header, { paddingTop: statusBarHeight }]}>
           <Text style={styles.greeting}>안녕하세요! 이민욱님</Text>
           <Image
-            source={require('../assets/profile.png')}
+            source={require('../../../assets/profile.png')}
             style={styles.profileImage}
           />
         </View>
 
         <View style={styles.centeredImageContainer}>
           <Image
-            source={require('../assets/homesearch.png')}
+            source={require('../../../assets/homesearch.png')}
             style={styles.homeSearchImage}
           />
         </View>
@@ -50,7 +50,7 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.studylevel}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Image
-              source={require('../assets/levelup.png')}
+              source={require('../../../assets/levelup.png')}
               style={styles.levelup}
             />
             <Text style={styles.leveltext}>Level 1</Text>

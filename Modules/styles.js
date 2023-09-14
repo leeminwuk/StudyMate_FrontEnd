@@ -80,7 +80,6 @@ input: {
     flexShrink: 0,
     color: '#5884E8',
     textAlign: 'center',
-    fontFamily: 'Mplus1p-Bold',
     fontSize: 14,
     fontStyle: 'normal',
     fontWeight: '700',

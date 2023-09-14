@@ -38,7 +38,10 @@ const BottomNavigationBar = () => {
       </TouchableOpacity>
       <TouchableOpacity style={styles.iconContainer}>
         <View style={styles.sendIcon}>
-          <Image source={require("../assets/send_message.png")} style={styles.icon} />
+          <Image
+            source={require("../assets/send_message.png")}
+            style={styles.icon}
+          />
         </View>
       </TouchableOpacity>
       <TouchableOpacity
@@ -82,15 +85,15 @@ const styles = StyleSheet.create({
     borderTopColor: "#ECECEC",
   },
   sendIcon: {
-    display: "inline-flex",
-    padding: 13,
+    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 100,
     backgroundColor: "#4C8EE8",
+    width: 56,
+    height: 56,
   },
   iconContainer: {
-    display: "flex",
     alignItems: "center",
   },
   icon: {
