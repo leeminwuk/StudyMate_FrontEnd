@@ -88,7 +88,7 @@ const BottomNavigationBar = () => {
       <Tab.Screen name="Feed" component={FeedScreen} />
       <Tab.Screen name="Mypage" component={MypageScreen} />
     </Tab.Navigator>
-    </View> 
+    </View>
   );
 };
 
