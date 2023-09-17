@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   header: {
-    marginTop: 32,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
