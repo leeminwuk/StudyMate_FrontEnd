@@ -1,27 +1,24 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-
   logincontainer: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#ffffff', // Set the background color to white
- 
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ffffff',
   },
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#ffffff', // Set the background color to white
-},
-
-input: {
+    backgroundColor: '#ffffff',
+  },
+  input: {
     width: '80%',
     height: 40,
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 10,
-},
+  },
   header: {
     marginTop: 32,
     flexDirection: 'row',
@@ -37,16 +34,16 @@ input: {
     height: 40,
   },
   loginlogo: {
-    width: 166, // Set the desired width of the image
-    height: 152, // Set the desired height of the image
-    resizeMode: 'contain', // Use 'contain' to fit the entire image without cropping
+    width: 166,
+    height: 152,
+    resizeMode: 'contain',
     marginBottom: 20,
   },
- 
   greeting: {
     marginLeft: 10,
     fontSize: 20,
-    fontWeight: 'bold',  },
+    fontWeight: 'bold',
+  },
   profileImage: {
     width: 40,
     height: 40,
@@ -58,41 +55,49 @@ input: {
     alignSelf: 'center',
     marginVertical: 5,
   },
-  searchContainer: {
+  title: {
     marginLeft: 21,
     flexDirection: 'row',
     alignItems: 'center',
     marginTop: 20,
   },
-  searchText: {
+  titleText: {
     marginLeft: 5,
     color: '#000',
-    fontFamily: 'Open Sans',
     fontSize: 18,
     fontStyle: 'normal',
     fontWeight: '600',
     lineHeight: 22,
   },
+  moreHomeContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   moreHome: {
-    marginLeft: 170,
-    width: 33,
+    width: 36,
     height: 20,
     flexShrink: 0,
     color: '#5884E8',
     textAlign: 'center',
     fontSize: 14,
-    fontStyle: 'normal',
     fontWeight: '700',
     lineHeight: 18,
-    letterSpacing: -0.5,
+    marginRight: 21,
+    marginTop: 20,
+  },
+  levelupContainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   levelup: {
-      marginTop: 20,
-      width: 25,
-      height: 26,
-      marginLeft: 20,
-      flexShrink: 0,
-      },
+    marginTop: 20,
+    width: 25,
+    height: 26,
+    marginLeft: 20,
+    flexShrink: 0,
+  },
   leveltext: {
     marginTop: 24,
     width: 90,
@@ -100,9 +105,8 @@ input: {
     flexShrink: 0,
     color: '#000',
     textAlign: 'center',
-    fontFamily: 'Mplus1p-Bold',
+    //fontFamily: 'Mplus1p-Bold',
     fontSize: 20,
-    fontStyle: 'normal',
     fontWeight: '700',
   },
   leveltext2: {
@@ -135,24 +139,34 @@ input: {
       width: 0,
       height: 3.843583106994629,
     },
-    shadowOpacity: 0.1, // Adjust shadowOpacity to 0.1 for 10% shadow
+    shadowOpacity: 0.1,
     shadowRadius: 17,
     elevation: 17,
-    flexDirection: 'row', // Arrange nested containers horizontally
-    justifyContent: 'space-between', // Add space between nested containers
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   nestedContainer: {
     marginTop: 29,
     marginLeft: 31,
     width: 88,
     height: 88,
-    justifyContent: 'center', // Center content vertically
-    alignItems: 'center', // Center content horizontally
+    justifyContent: 'center',
+    alignItems: 'center',
     flexShrink: 0,
-    backgroundColor: '#B29BF2', // Color for Nested Container 1 and 3
+    backgroundColor: '#B29BF2',
     borderRadius: 29,
   },
- 
+
+  // SubjectScreen
+  subjectcontainer: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+  },
+  bellImage: {
+    width: 28,
+    height: 28,
+    marginRight: 21,
+  },
 });
 
 export default styles;

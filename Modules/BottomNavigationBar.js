@@ -1,105 +1,83 @@
-import React, { useState } from "react";
-import { View, TouchableOpacity, Image, StyleSheet } from "react-native";
+import React from 'react';
+import { Image, View } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import HomeScreen from './Page/Home/HomeScreen';
+import SubjectScreen from './Page/Subject/SubjectScreen';
+import MessageScreen from './Page/Message/MessageScreen';
+import FeedScreen from './Page/Feed/FeedScreen';
+import MypageScreen from './Page/Mypage/MypageScreen';
+
+const Tab = createBottomTabNavigator();
 
 const BottomNavigationBar = () => {
-  const [selectedButton, setSelectedButton] = useState("home"); // Initialize with the default selected button
-
-  const handleButtonPress = (button) => {
-    setSelectedButton(button);
-  };
-
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.iconContainer}
-        onPress={() => handleButtonPress("home")}
-      >
-        <Image
-          source={
-            selectedButton === "home"
-              ? require("../assets/press_home.png")
-              : require("../assets/unpress_home.png")
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused }) => {
+          let iconName;
+          let customIconStyle;
+
+          switch (route.name) {
+            case 'Home':
+              iconName = focused
+                ? require('../assets/press_home.png')
+                : require('../assets/unpress_home.png');
+              break;
+            case 'Subject':
+              iconName = focused
+                ? require('../assets/press_subject.png')
+                : require('../assets/unpress_subject.png');
+              break;
+            case 'Message':
+              iconName = require('../assets/send_message.png');
+              customIconStyle = {
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 100,
+                backgroundColor: "#4C8EE8",
+                width: 56,
+                height: 56,
+                marginTop: 10 // 이 부분을 추가합니다.
+              };
+              break;
+            case 'Feed':
+              iconName = focused
+                ? require('../assets/press_feed.png')
+                : require('../assets/unpress_feed.png');
+              break;
+            case 'Mypage':
+              iconName = focused
+                ? require('../assets/press_mypage.png')
+                : require('../assets/unpress_mypage.png');
+              break;
           }
-          style={styles.icon}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.iconContainer}
-        onPress={() => handleButtonPress("subjectselect")}
-      >
-        <Image
-          source={
-            selectedButton === "subjectselect"
-              ? require("../assets/press_subject.png")
-              : require("../assets/unpress_subject.png")
+
+          if (customIconStyle) {
+            return (
+              <View style={customIconStyle}>
+                <Image source={iconName} style={{ width: 24, height: 24 }} />
+              </View>
+            );
           }
-          style={styles.icon}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.iconContainer}>
-        <View style={styles.sendIcon}>
-          <Image
-            source={require("../assets/send_message.png")}
-            style={styles.icon}
-          />
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.iconContainer}
-        onPress={() => handleButtonPress("feed")}
-      >
-        <Image
-          source={
-            selectedButton === "feed"
-              ? require("../assets/press_feed.png")
-              : require("../assets/unpress_feed.png")
-          }
-          style={styles.icon}
-        />
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.iconContainer}
-        onPress={() => handleButtonPress("mypage")}
-      >
-        <Image
-          source={
-            selectedButton === "mypage"
-              ? require("../assets/press_mypage.png")
-              : require("../assets/unpress_mypage.png")
-          }
-          style={styles.icon}
-        />
-      </TouchableOpacity>
-    </View>
+
+          return <Image source={iconName} style={{ width: 24, height: 24 }} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: 'blue',
+        inactiveTintColor: 'gray',
+        showLabel: false,
+      }}
+    >
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Subject" component={SubjectScreen} />
+      <Tab.Screen name="Message" component={MessageScreen} />
+      <Tab.Screen name="Feed" component={FeedScreen} />
+      <Tab.Screen name="Mypage" component={MypageScreen} />
+    </Tab.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-    backgroundColor: "#FFF",
-    height: 77,
-    borderTopWidth: 1,
-    borderTopColor: "#ECECEC",
-  },
-  sendIcon: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 100,
-    backgroundColor: "#4C8EE8",
-    width: 56,
-    height: 56,
-  },
-  iconContainer: {
-    alignItems: "center",
-  },
-  icon: {
-    width: 24,
-    height: 24,
-  },
-});
 
 export default BottomNavigationBar;

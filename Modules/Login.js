@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, TextInput, Button, StyleSheet } from "react-native"; // Add the necessary imports
+import { View, Image } from "react-native"; 
 import MyKakaoLoginButton from "./MyKakaoLoginButton";
 import MyGoogleLoginButton from "./MyGoogleLoginButton";
 import MyAppleLoginButton from "./MyAppleLoginButton";
@@ -12,14 +12,13 @@ const LoginScreen = ({ navigation }) => {
 
   return (
     <View style={styles.logincontainer}>
-      {/* Load an image file and display it as an Image component */}
       <Image
         source={require("../assets/loginlogo.png")}
         style={styles.loginlogo}
       />
-      <MyGoogleLoginButton />
-      <MyKakaoLoginButton />
-      <MyAppleLoginButton />
+      <MyGoogleLoginButton onPress={handleLogin} />
+      <MyKakaoLoginButton onPress={handleLogin} />
+      <MyAppleLoginButton onPress={handleLogin} />
     </View>
   );
 };

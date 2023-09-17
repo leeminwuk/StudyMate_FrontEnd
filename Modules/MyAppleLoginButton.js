@@ -7,9 +7,8 @@ const MyAppleLoginButton = () => {
 
     const handleAppleLogin = () => {
         console.log('Apple login clicked!');
-        navigation.navigate('Home');
+        navigation.navigate('Main', { screen: 'Home' });
     };
-
     return (
         <TouchableOpacity
             onPress={handleAppleLogin}
@@ -18,8 +17,6 @@ const MyAppleLoginButton = () => {
                 height: 44,
                 borderRadius: 5,
                 marginBottom: 8,
-                fontSize: 12,
-                color: '#4a4a4a',
                 backgroundColor: '#000',
                 shadowColor: '#9b9b9b',
                 shadowOffset: { width: 0, height: 2 },
@@ -28,23 +25,20 @@ const MyAppleLoginButton = () => {
                 display: 'flex',
                 alignItems: 'center',
                 flexDirection: 'row',
+                paddingHorizontal: 16, // Added padding to the button
             }}
         >
-            {/* Add the image here */}
             <Image
                 source={require('../assets/apple.png')}
                 style={{
                     width: 28,
                     height: 28,
                     flexShrink: 0,
-                    marginLeft: 16, // Adjust the margin as needed
                 }}
             />
-            <View style={{ marginLeft: 16, flexDirection: 'row' }}>
-                <Text style={{ color: '#ffffff' }}>
-                    애플로 로그인하기
-                </Text>
-            </View>
+            <Text style={{ color: '#ffffff', marginLeft: 16 }}>
+                애플로 로그인하기
+            </Text>
         </TouchableOpacity>
     );
 };
