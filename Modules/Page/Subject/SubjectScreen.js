@@ -6,7 +6,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import LongCustomTuner from "../../LongCustomTuner";
 
 const handlenotificationbell = () => {
-  navigation.navigate("Search");
+  navigation.navigate("NotificationScreen");
 };
 
 const SubjectScreen = () => {
