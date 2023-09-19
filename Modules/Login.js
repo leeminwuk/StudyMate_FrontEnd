@@ -16,9 +16,11 @@ const LoginScreen = ({ navigation }) => {
         source={require("../assets/loginlogo.png")}
         style={styles.loginlogo}
       />
+      <View style={styles.loginbuttoncontainer}>
       <MyGoogleLoginButton onPress={handleLogin} />
       <MyKakaoLoginButton onPress={handleLogin} />
       <MyAppleLoginButton onPress={handleLogin} />
+      </View>
     </View>
   );
 };

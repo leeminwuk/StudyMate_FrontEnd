@@ -1,13 +1,13 @@
 import React from 'react';
-import { View, Image, ScrollView, Text } from 'react-native';
+import { View, Image, ScrollView } from 'react-native';
 import styles from './styles'; // Import styles from styles.js
 
-const NestedCustomTuner = () => {
+const NestedCustomTuner = ({ image }) => {
   return (
     <View>
       <View style={styles.nestedContainer}>
         <Image
-          source={require('../assets/eunho.png')}
+          source={image}
           style={{ width: 60, height: 75 }}
         />
       </View>
@@ -15,32 +15,31 @@ const NestedCustomTuner = () => {
   );
 };
 
-const CustomTuner = ({ numberOfNestedCustomTuners = 3 }) => {
-  const nestedCustomTuners = Array.from(
-    { length: numberOfNestedCustomTuners },
-    (nestedIndex) => (
-      <NestedCustomTuner key={nestedIndex} />
-    )
-  );
-
+const CustomTuner = ({ image }) => {
   return (
-    <ScrollView
-      horizontal={true}
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{ overflow: 'hidden' }} // Add this style to hide the scrollbar
-    >
-      <View style={styles.customTuner}>{nestedCustomTuners}</View>
-    </ScrollView>
+    <View style={styles.customTuner}>
+      <NestedCustomTuner image={image} />
+    </View>
   );
 };
 
-const MultipleCustomTuners = ({ numberOfCustomTuners = 3, numberOfNestedCustomTuners = 3 }) => {
+const MultipleCustomTuners = () => {
+  const images = [
+    require('../assets/eunho.png'),
+    require('../assets/minuk.png'),
+    require('../assets/silvergun.png'),
+    // ... 다른 이미지 경로
+  ];
+
+  const numberOfCustomTuners = images.length; // 이미지의 개수에 따라서만 생성
+
   const customTuners = Array.from(
     { length: numberOfCustomTuners },
-    (customIndex) => (
-      <CustomTuner key={customIndex} numberOfNestedCustomTuners={numberOfNestedCustomTuners} />
+    (_, customIndex) => (
+      <CustomTuner key={customIndex} image={images[customIndex]} />
     )
   );
+
   return (
     <ScrollView
       horizontal={true}
