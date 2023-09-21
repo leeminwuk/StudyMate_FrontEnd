@@ -4,12 +4,14 @@ import Svg, { Rect } from "react-native-svg";
 import styles from "./styles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import LongCustomTuner from "../../LongCustomTuner";
+import { useNavigation } from '@react-navigation/native';
 
-const handlenotificationbell = () => {
-  navigation.navigate("NotificationScreen");
+const handlenotificationbell = (navigation) => {
+  navigation.navigate("Notification");
 };
 
 const SubjectScreen = () => {
+  const navigation = useNavigation(); 
   const [showTuner, setShowTuner] = useState(null);
   const [selectedSubject, setSelectedSubject] =
     useState("학부를 선택해주세요!");
@@ -20,7 +22,7 @@ const SubjectScreen = () => {
     { image: require("../../../assets/art.png"), name: "예체능학부" },
     { image: require("../../../assets/management.png"), name: "경영관리학부" },
     { image: require("../../../assets/global.png"), name: "글로벌인재학부" },
-    { image: require("../../../assets/ICT.png"), name: "공과대학" },
+    { image: require("../../../assets/ict.png"), name: "공과대학" },
     { image: require("../../../assets/study.png"), name: "사범대학" },
   ];
 
@@ -57,7 +59,7 @@ const SubjectScreen = () => {
           </Svg>
           <Text style={styles.titleText}>강남대학교</Text>
         </View>
-        <TouchableOpacity onPress={handlenotificationbell}>
+        <TouchableOpacity onPress={() => handlenotificationbell(navigation)}>
           <Image
             source={require("../../../assets/bell.png")}
             style={styles.bellImage}

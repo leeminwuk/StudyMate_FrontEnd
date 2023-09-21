@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   //longcustomTuner
   longcustomTuner: {
     marginTop: 20,
-    marginLeft: 21,
+    marginLeft: 18,
     width: 357,
     height: 98,
     flexShrink: 0,
