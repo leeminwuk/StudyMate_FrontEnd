@@ -1,11 +1,17 @@
-// NotificationScreen.js
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
+
+const handleGoToMoreScreen = () => {
+  const topNotification = notifications[0];
+  navigation.navigate("MoreScreen", { topNotification, selectedSubject: "some subject" });
+};
+ 
 const NotificationScreen = () => {
+  const navigation = useNavigation();
   const [notifications, setNotifications] = useState([
     {
       title: "2023년 2학기 튜터링 모집",
@@ -30,18 +36,16 @@ const NotificationScreen = () => {
     },
   ]);
 
-  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.title}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={handleGoToMoreScreen}>
           <Image
             source={require("../../../assets/backbutton.png")}
             style={{ width: 15, height: 25 }}
           />
         </TouchableOpacity>
-
         <Text style={styles.titleText}>알림</Text>
       </View>
       <View>
@@ -56,13 +60,7 @@ const NotificationScreen = () => {
               </View>
               <View>
                 <Text style={styles.text1}>{notification.title}</Text>
-                <Text
-                  style={styles.text2}
-                  numberOfLines={1}
-                  ellipsizeMode="tail"
-                >
-                  {notification.description}
-                </Text>
+                <Text style={styles.text2}>{notification.description}</Text>
               </View>
             </View>
           </View>
