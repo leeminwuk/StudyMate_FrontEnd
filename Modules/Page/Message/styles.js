@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     lineHeight: 24,
-    letterSpacing: 5,
   },
   context: {
     color: "#ADB5BD",

@@ -6,6 +6,8 @@ import NotificationScreen from './Modules/Page/Notification/Notification';
 import LoginScreen from './Modules/Login';
 import BottomNavigationBar from './Modules/BottomNavigationBar';
 import MoreScreen from './Modules/Page/More/MoreScreen';
+import MessageScreen from './Modules/Page/Message/MessageScreen';
+import ChattingScreen from './Modules/Page/Chatting/ChatingScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -17,6 +19,8 @@ const App = () => {
           <Stack.Screen name="Main" component={BottomNavigationBar} />
           <Stack.Screen name="Notification" component={NotificationScreen} />
           <Stack.Screen name="MoreScreen" component={MoreScreen} />
+          <Stack.Screen name="MessageScreen" component={MessageScreen} />
+          <Stack.Screen name="ChatingScreen" component={ChattingScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

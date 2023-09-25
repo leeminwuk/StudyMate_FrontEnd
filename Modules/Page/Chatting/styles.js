@@ -1,0 +1,117 @@
+import { StyleSheet } from "react-native";
+import { Dimensions } from "react-native";
+const { width } = Dimensions.get("window");
+const maxWidth = width * 0.4; 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#FFF",
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: 8,
+    marginRight: 8,
+  },
+  title: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  name: {
+    marginLeft: 8,
+    color: "#000",
+    fontSize: 18,
+    fontStyle: "normal",
+    fontWeight: "600",
+    lineHeight: 30,
+  },
+  kebabIcon: {
+    width: 28,
+    height: 28,
+  },
+  inputChat: {
+    width: "100%",
+    height: 56,
+    borderTopWidth: 0.5,
+    borderTopColor: "#ADB5BD",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  icontextContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 12,
+    marginRight: 12,
+    marginTop: 8,
+  },
+  inputText: {
+    flex: 1,
+    height: 36,
+    borderRadius: 4,
+    backgroundColor: "#f7f7fc",
+    paddingLeft: 8,
+  },
+  plusIcon: {
+    width: 24,
+    height: 24,
+    marginLeft: 12,
+    marginRight: 12,
+  },
+  sendIcon: {
+    width: 24,
+    height: 24,
+    marginLeft: 12,
+    marginRight: 12,
+  },
+  messageBubbleLeft: {
+    marginLeft: 12,
+    display: "flex",
+    padding: 10,
+    flexDirection: "column",
+    alignItems: "flex-start",
+    borderRadius: 16,
+    backgroundColor: "#f7f7fc",
+    elevation: 4,
+    marginBottom: 4,
+    minWidth: 60,
+    maxWidth: maxWidth,
+  },
+  messageBubbleRight: {
+    marginRight: 12,
+    display: "flex",
+    padding: 10,
+    flexDirection: "column",
+    alignItems: "flex-end",
+    borderRadius: 16,
+    backgroundColor: "#5884E8",
+    elevation: 4,
+    marginBottom: 4,
+    minWidth: 60,
+    maxWidth: maxWidth,
+  },
+  menuContainer: {
+    position: 'absolute',
+    right: 0,
+    top: 50,
+    width: 104,
+    height: 40,
+    backgroundColor: '#FFF',
+    elevation: 4,
+  },
+  menuButton: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  menuText: {
+    fontSize: 16,
+    color: '#000',
+  },
+});
+
+export default styles;

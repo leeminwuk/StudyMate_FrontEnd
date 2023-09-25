@@ -5,11 +5,6 @@ import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 
-const handleGoToMoreScreen = () => {
-  const topNotification = notifications[0];
-  navigation.navigate("MoreScreen", { topNotification, selectedSubject: "some subject" });
-};
- 
 const NotificationScreen = () => {
   const navigation = useNavigation();
   const [notifications, setNotifications] = useState([
@@ -36,6 +31,9 @@ const NotificationScreen = () => {
     },
   ]);
 
+  const handleGoToMoreScreen = () => {
+    navigation.goBack();
+  };
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

@@ -1,8 +1,15 @@
 import React from "react";
-import { View, Text, Image, FlatList } from "react-native";
+import { View, Text, Image, FlatList, TouchableOpacity } from "react-native";
 import styles from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
 const MessageScreen = () => {
+  const navigation = useNavigation();
+
+  const handleChatPress = (name) => {
+    navigation.navigate("ChatingScreen", { name });
+  };
+  
   const messages = [
     {
       name: "신은호",
@@ -26,24 +33,25 @@ const MessageScreen = () => {
 
   const renderItem = ({ item, index }) => (
     <View>
-      {index === 0 && <View style={{ height: 40 }} />} 
-      <View style={styles.chatContainer}>
-        <View style={styles.nestedContainer}>
-          <Image source={item.image} style={{ width: 32, height: 40 }} />
-        </View>
-        <View style={styles.textContainer}>
-          <View style={styles.nameContainer}>
-            <Text style={styles.name}>{item.name}</Text>
-            <Text style={styles.time}>{item.time}</Text>
+      {index === 0 && <View style={{ height: 40 }} />}
+      <TouchableOpacity onPress={() => handleChatPress(item.name)}>
+        <View style={styles.chatContainer}>
+          <View style={styles.nestedContainer}>
+            <Image source={item.image} style={{ width: 32, height: 40 }} />
           </View>
-          <View style={styles.contextContainer}>
-            <Text style={styles.context}>{item.context}</Text>
+          <View style={styles.textContainer}>
+            <View style={styles.nameContainer}>
+              <Text style={styles.name}>{item.name}</Text>
+              <Text style={styles.time}>{item.time}</Text>
+            </View>
+            <View style={styles.contextContainer}>
+              <Text style={styles.context}>{item.context}</Text>
+            </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
-  
 
   return (
     <View>
