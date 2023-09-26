@@ -93,24 +93,20 @@ const styles = StyleSheet.create({
     minWidth: 60,
     maxWidth: maxWidth,
   },
-  menuContainer: {
+  menuButton: {
     position: 'absolute',
-    right: 0,
-    top: 50,
+    top: 100,  
+    right: 20,
     width: 104,
     height: 40,
-    backgroundColor: '#FFF',
-    elevation: 4,
-  },
-  menuButton: {
-    width: '100%',
-    height: '100%',
+    backgroundColor: '#fff',
+    borderColor: '#ccc', 
+    borderWidth:1,
+    borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  menuText: {
-    fontSize: 16,
-    color: '#000',
+    elevation: 9999,  
+    zIndex: 9,
   },
 });
 
