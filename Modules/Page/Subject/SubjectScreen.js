@@ -4,15 +4,12 @@ import Svg, { Rect } from "react-native-svg";
 import styles from "./styles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import LongCustomTuner from "../../LongCustomTuner";
-
-const handlenotificationbell = () => {
-  navigation.navigate("NotificationScreen");
-};
+import { useNavigation } from "@react-navigation/native";
 
 const SubjectScreen = () => {
+  const navigation = useNavigation();
   const [showTuner, setShowTuner] = useState(null);
-  const [selectedSubject, setSelectedSubject] =
-    useState("학부를 선택해주세요!");
+  const [selectedSubject, setSelectedSubject] = useState("학부를 선택해주세요!");
   const [showMoreButton, setShowMoreButton] = useState(false);
 
   const buttons = [
@@ -20,17 +17,24 @@ const SubjectScreen = () => {
     { image: require("../../../assets/art.png"), name: "예체능학부" },
     { image: require("../../../assets/management.png"), name: "경영관리학부" },
     { image: require("../../../assets/global.png"), name: "글로벌인재학부" },
-    { image: require("../../../assets/ICT.png"), name: "공과대학" },
+    { image: require("../../../assets/ict.png"), name: "공과대학" },
     { image: require("../../../assets/study.png"), name: "사범대학" },
   ];
-
+  
   const handleButtonClick = (name) => {
     if (name) {
-      // name이 존재하는지 확인
       setShowTuner(<LongCustomTuner />);
       setSelectedSubject(name);
-      setShowMoreButton(true); // Update state here
+      setShowMoreButton(true);
     }
+  };
+
+  const handlenotificationbell = () => {
+    navigation.navigate("Notification");
+  };
+
+  const handleMore = () => {
+    navigation.navigate("MoreScreen", { selectedSubject });
   };
 
   return (
@@ -70,7 +74,7 @@ const SubjectScreen = () => {
             <TouchableOpacity
               key={index}
               style={[styles.subjectsellectbutton]}
-              onPress={() => handleButtonClick(button.name)} // button.name을 인자로 전달
+              onPress={() => handleButtonClick(button.name)}
             >
               <Image source={button.image} style={styles.subjecticon} />
               <Text
@@ -101,7 +105,7 @@ const SubjectScreen = () => {
           <Text style={styles.titleText}>{selectedSubject}</Text>
         </View>
         {showMoreButton && (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleMore}>
             <Text style={styles.moreHome}>더보기</Text>
           </TouchableOpacity>
         )}

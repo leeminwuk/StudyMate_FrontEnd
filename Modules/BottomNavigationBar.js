@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import styles from './styles';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import HomeScreen from './Page/Home/HomeScreen';
 import SubjectScreen from './Page/Subject/SubjectScreen';

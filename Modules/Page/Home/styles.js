@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
+    marginRight: 8,
   },
   banner: {
     flexDirection: 'row',

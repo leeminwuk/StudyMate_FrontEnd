@@ -17,7 +17,7 @@ const HomeScreen = ({ navigation }) => {
   const progressLevel = 80;
 
   const handleMore = () => {
-    navigation.navigate("Search");
+    navigation.navigate("MoreScreen");
   };
 
   const statusBarHeight = Platform.OS === "ios" ? 20 : StatusBar.currentHeight;
