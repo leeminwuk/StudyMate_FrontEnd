@@ -46,7 +46,7 @@ const ExitButton = () => {
   return (
     <>
       {showButton && (
-        <TouchableOpacity style={styles.exitButtonContainer}>
+        <View style={styles.exitButtonContainer}>
           <Image
             source={require("../assets/error.png")}
             style={styles.errorImage}
@@ -72,7 +72,7 @@ const ExitButton = () => {
               <Text style={styles.endText}>종료하기</Text>
             </TouchableOpacity>
           </View>
-        </TouchableOpacity>
+        </View>
       )}
       {showEndButton && (
         <View style={styles.ratingButtonContainer}>
