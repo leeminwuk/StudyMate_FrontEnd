@@ -38,7 +38,7 @@ const SubjectScreen = () => {
   };
 
   return (
-    <View style={{ flex: 1 }} blurType="light">
+    <View style={{ flex: 1 }}>
       <View
         style={[
           styles.title,
