@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import styles from "../Feed/styles";
 
-const PostContainer = ({ post, navigation, isTouchable = true }) => {
+const PostContainer = ({ post, navigation, isTouchable = true, onFavoritePress }) => {
+  const [favoriteCount, setFavoriteCount] = useState(0); // 초기값을 0으로 설정
+
   const Wrapper = isTouchable ? TouchableOpacity : View;
   const category = post.category;
   const categoryBorderColor = category === "인기글" ? "#5884E8" : "#5F5F5F";
   const categoryTextColor = category === "인기글" ? "#5884E8" : "#5F5F5F";
 
+  const handleFavoritePress = () => {
+    setFavoriteCount(favoriteCount + 1); // favoriteCount 증가
+  };
+
   return (
     <Wrapper
-      style={styles.postContainer} // borderColor를 제거했습니다.
-      onPress={isTouchable ? () => navigation.navigate("Post", { post }) : null}
-    >
+    style={styles.postContainer}
+    onPress={isTouchable ? () => navigation.navigate("Post", { post }) : null}
+  >
       <View style={[styles.postCategory, { borderColor: categoryBorderColor }]}>
         <Text style={[styles.postText, { color: categoryTextColor }]}>
           {category}
@@ -34,13 +40,14 @@ const PostContainer = ({ post, navigation, isTouchable = true }) => {
       <View style={styles.hr}></View>
 
       <View style={styles.favoritecommentContainer}>
-        <View style={styles.favoriteContainer}>
+        <TouchableOpacity onPress={onFavoritePress} style={styles.favoriteContainer}>
           <Image
             source={require("../../../assets/favorite.png")}
             style={styles.favoriteImage}
           />
           <Text style={styles.favoriteText}>{post.favoriteCount}</Text>
-        </View>
+        </TouchableOpacity>
+
         <View style={styles.commentContainer}>
           <Image
             source={require("../../../assets/comment.png")}
