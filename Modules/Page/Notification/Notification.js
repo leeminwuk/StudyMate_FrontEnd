@@ -41,7 +41,7 @@ const NotificationScreen = () => {
         <TouchableOpacity onPress={handleGoToMoreScreen}>
           <Image
             source={require("../../../assets/backbutton.png")}
-            style={{ width: 15, height: 25 }}
+            style={{ width: 16, height: 24 }}
           />
         </TouchableOpacity>
         <Text style={styles.titleText}>알림</Text>

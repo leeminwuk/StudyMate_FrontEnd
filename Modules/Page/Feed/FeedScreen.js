@@ -2,20 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image, FlatList, ScrollView } from 'react-native';
 import styles from './styles';
 import Svg, { Rect } from 'react-native-svg';
+import PostContainer from '../Post/PostContainer';
 
-const PostContainer = ({ postCategory, postTitle, postContent, favoritecommentContainer }) => {
-  return (
-    <TouchableOpacity style={styles.postContainer}>
-      {postCategory}
-      {postTitle}
-      {postContent}
-      <View style={styles.hr}></View>
-      {favoritecommentContainer}
-    </TouchableOpacity>
-  );
-};
-
-const FeedScreen = () => {
+const FeedScreen = ({ navigation }) => {
   const categoryData = [
     { id: '1', title: '전체' },
     { id: '2', title: '인기' },
@@ -89,8 +78,12 @@ const FeedScreen = () => {
     );
   };
 
+  const handleFloatingButtonPress = () => {
+    console.log("Floating Button Pressed");
+  };
+
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <View style={styles.title}>
         <Svg width="3" height="22">
           <Rect
@@ -112,53 +105,20 @@ const FeedScreen = () => {
           showsHorizontalScrollIndicator={false}
         />
       </View>
-      <ScrollView style={{flex: 1}}>
+      <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
         {postData.map((post) => (
-          <PostContainer
-            key={post.id}
-            postCategory={
-              <View style={styles.postCategory}>
-                <Text style={styles.postText}>{post.category}</Text>
-              </View>
-            }
-            postTitle={
-              <View style={styles.postTitle}>
-                <Image
-                  source={require("../../../assets/profile.png")}
-                  style={styles.postImage}
-                />
-                <View style={styles.postTitleText}>
-                  <Text style={styles.postName}>{post.name}</Text>
-                  <Text style={styles.postDate}>{post.date}</Text>
-                </View>
-              </View>
-            }
-            postContent={
-              <View style={styles.postContent}>
-                <Text style={styles.postContentText}>{post.content}</Text>
-              </View>
-            }
-            favoritecommentContainer={
-              <View style={styles.favoritecommentContainer}>
-                <View style={styles.favoriteContainer}>
-                  <Image
-                    source={require("../../../assets/favorite.png")}
-                    style={styles.favoriteImage}
-                  />
-                  <Text style={styles.favoriteText}>{post.favoriteCount}</Text>
-                </View>
-                <View style={styles.commentContainer}>
-                  <Image
-                    source={require("../../../assets/comment.png")}
-                    style={styles.commentImage}
-                  />
-                  <Text style={styles.commentText}>{post.commentCount}</Text>
-                </View>
-              </View>
-            }
-          />
+          <PostContainer key={post.id} post={post} navigation={navigation} />
         ))}
       </ScrollView>
+      <TouchableOpacity
+        style={styles.floatingButton}
+        onPress={handleFloatingButtonPress}
+      >
+        <Image
+          source={require("../../../assets/write.png")}
+          style={styles.floatingButtonImage}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
