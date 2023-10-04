@@ -50,6 +50,8 @@ const styles = StyleSheet.create({
     width: 352,
     height: 164,
     borderRadius: 12,
+    borderColor: "#D0D0D0",
+    borderWidth: 1,
   },
   postCategory: {
     marginTop: 16,
@@ -60,7 +62,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderColor: "#5884E8",
-    borderWidth: 0.5,
+    borderWidth: 1,
     backgroundColor: "#FFFFFF",
   },
   postText: {
@@ -125,27 +127,27 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
-    favoriteContainer: {
-        flexDirection: "row",
-        alignItems: "center",
-    },
-    favoriteText: {
-        marginLeft: 4,
-        color: "#5884E8",
-        fontSize: 12,
-        fontWeight: "600",
-        lineHeight: 12,
-        letterSpacing: -0.5,
-    },
+  favoriteContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  favoriteText: {
+    marginLeft: 4,
+    color: "#5884E8",
+    fontSize: 12,
+    fontWeight: "600",
+    lineHeight: 12,
+    letterSpacing: -0.5,
+  },
   favoriteImage: {
     width: 20,
     height: 20,
   },
-    commentContainer: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginLeft: 16,
-    },
+  commentContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 16,
+  },
   commentImage: {
     width: 20,
     height: 20,
@@ -157,6 +159,23 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     lineHeight: 12,
     letterSpacing: -0.5,
+  },
+  floatingButton: {
+    position: "absolute",
+    width: 60,
+    height: 60,
+    alignItems: "center",
+    justifyContent: "center",
+    right: 30,
+    bottom: 30,
+    backgroundColor: "#5884E8",
+    borderRadius: 30,
+    zIndex: 100,
+  },
+  floatingButtonImage: {
+    width: 24,
+    height: 24,
+    marginRight: 4,
   },
 });
 
