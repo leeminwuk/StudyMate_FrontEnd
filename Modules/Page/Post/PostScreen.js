@@ -5,14 +5,21 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import PostContainer from './PostContainer';
 import CommentBox from './CommentBox';
 import { ScrollView } from "react-native";
+import { useData } from '../../DataContext';
 
-
-const PostScreen = () => {
+const PostScreen = ({ route }) => {
   const navigation = useNavigation();
-  const route = useRoute();
+  const { updateFavoriteCount } = useData();
   const { post } = route.params;
-  const [comments, setComments] = useState([]);
+  const [favoriteCount, setFavoriteCount] = useState(post.favoriteCount);
+  const [comments, setComments] = useState([]); 
   const [commentInput, setCommentInput] = useState("");
+  const handleFavoritePress = () => {
+    const newFavoriteCount = favoriteCount + 1;
+    setFavoriteCount(newFavoriteCount);
+    updateFavoriteCount(post.id, newFavoriteCount);
+  };
+  
 
   const handleGoToFeedScreen = () => {
     navigation.goBack();
@@ -45,28 +52,27 @@ const PostScreen = () => {
       </View>
       <View style={styles.postContainer}>
         <PostContainer
-          post={post}
+          post={{ ...post, favoriteCount }}
           navigation={navigation}
           isTouchable={false}
+          onFavoritePress={handleFavoritePress}
         />
       </View>
       <View style={styles.commentContainer}>
-  {comments.length === 0 ? (
-    <Text style={styles.placeholderText}>
-      {"아직 댓글이 없어요!"}
-      {"\n"}
-      {"첫 댓글을 작성해주세요."}
-    </Text>
-  ) : (
-    <ScrollView
-    showsVerticalScrollIndicator={false}
-    >
-      {comments.map((comment, index) => (
-        <CommentBox key={index} comment={comment} />
-      ))}
-    </ScrollView>
-  )}
-</View>
+        {comments.length === 0 ? (
+          <Text style={styles.placeholderText}>
+            {"아직 댓글이 없어요!"}
+            {"\n"}
+            {"첫 댓글을 작성해주세요."}
+          </Text>
+        ) : (
+          <ScrollView showsVerticalScrollIndicator={false}>
+            {comments.map((comment, index) => (
+              <CommentBox key={index} comment={comment} />
+            ))}
+          </ScrollView>
+        )}
+      </View>
 
       <View style={styles.commentInputContainer}>
         <TextInput

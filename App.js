@@ -10,10 +10,14 @@ import MessageScreen from './Modules/Page/Message/MessageScreen';
 import ChattingScreen from './Modules/Page/Chatting/ChatingScreen';
 import FeedScreen from './Modules/Page/Feed/FeedScreen';
 import PostScreen from './Modules/Page/Post/PostScreen';
+import { DataProvider } from './Modules/DataContext';
+import WriteScreen from './Modules/Page/Writing/WriteScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
+    <DataProvider>
+
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -25,9 +29,11 @@ const App = () => {
           <Stack.Screen name="ChatingScreen" component={ChattingScreen} />
           <Stack.Screen name="Feed" component={FeedScreen} />
           <Stack.Screen name="Post" component={PostScreen} />
+          <Stack.Screen name="WriteScreen" component={WriteScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
+    </DataProvider>
   );
 };
 
