@@ -22,7 +22,7 @@ const FeedScreen = ({ navigation }) => {
 
   const { postData, setPostData } = useData();
 
-  const [pressedId, setPressedId] = useState(null);
+  const [pressedId, setPressedId] = useState("1");
 
   const handlePress = (id) => {
     setPressedId(id);
