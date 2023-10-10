@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  titleContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    textAlign: "center",
+  },
   title: {
     marginLeft: 21,
     flexDirection: "row",
@@ -14,6 +20,19 @@ const styles = StyleSheet.create({
     fontStyle: "normal",
     fontWeight: "600",
     lineHeight: 22,
+  },
+  registrationtutorContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 20,
+  },
+  registrationtutorText: {
+    color: "#5884E8",
+    fontSize: 14,
+    fontStyle: "normal",
+    fontWeight: "600",
+    lineHeight: 18,
+    marginRight: 21,
   },
 });
 

@@ -12,6 +12,7 @@ import FeedScreen from './Modules/Page/Feed/FeedScreen';
 import PostScreen from './Modules/Page/Post/PostScreen';
 import { DataProvider } from './Modules/DataContext';
 import WriteScreen from './Modules/Page/Writing/WriteScreen';
+import RegistrationScreen from './Modules/Page/Registration/RegistrationScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -30,6 +31,8 @@ const App = () => {
           <Stack.Screen name="Feed" component={FeedScreen} />
           <Stack.Screen name="Post" component={PostScreen} />
           <Stack.Screen name="WriteScreen" component={WriteScreen} />
+          <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
