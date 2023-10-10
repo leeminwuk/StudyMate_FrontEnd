@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  //login
   logincontainer: {
     flex: 1,
     justifyContent: "center",
@@ -50,7 +51,40 @@ const styles = StyleSheet.create({
     backgroundColor: "#B29BF2",
     borderRadius: 29,
   },
-  //longcustomTuner
+  tutorContainer: {
+    marginTop: 16,
+    marginLeft: 24,
+  },
+  tutorName: {
+    color: "#000",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  tutorSubject: {
+    color: "#5F5F5F",
+    fontSize: 12,
+    fontWeight: "400",
+    marginTop: 4,
+  },
+  favoriteContainer: {
+    marginTop: 16,
+    marginLeft: 24,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  favoriteText: {
+    color: "#5884E8",
+    fontSize: 12,
+    fontWeight: "600",
+    marginLeft: 8,
+  },
+  //
+  centeredContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "flex-end", // 아이템을 오른쪽으로 정렬합니다.
+    paddingRight: 16, // 위치를 조정하기 위해 오른쪽에 약간의 여유를 둡니다.
+  },
   longcustomTuner: {
     marginTop: 20,
     marginLeft: 21,
@@ -68,7 +102,6 @@ const styles = StyleSheet.create({
     shadowRadius: 17,
     elevation: 17,
     flexDirection: "row",
-    justifyContent: "space-between",
   },
   longnestedContainer: {
     marginTop: 21,
@@ -81,6 +114,50 @@ const styles = StyleSheet.create({
     backgroundColor: "#B29BF2",
     borderRadius: 28,
   },
+  tutorinformationContainer: {
+    justifyContent: "center",
+  },
+  longtunerName:{
+    marginTop: 21,
+    marginLeft: 16,
+    color: "#000",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  longtunerSubject:{
+    marginTop: 4,
+    marginLeft: 16,
+    color: "#5F5F5F",
+    fontSize: 12,
+    fontWeight: "400",
+  },
+  longfavoriteContainer: {
+    marginTop: 8,
+    marginLeft: 16,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  longfavoriteText:{
+    color: "#5884E8",
+    marginLeft: 4,
+  },
+  selectButtonContainer: {
+    alignItems: "flex-end",
+    marginBottom: 8,
+  },
+  selectButton: {
+    marginTop: 8,
+    marginLeft: 16,
+    width: 56,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: "#5884E8",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+selectButtonText: {
+  color : "#ffffff",
+},
   //eixtbutton
   exitButtonContainer: {
     width: 328,
