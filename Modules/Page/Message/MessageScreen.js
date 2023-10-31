@@ -40,9 +40,11 @@ const MessageScreen = () => {
             <Image source={item.image} style={{ width: 32, height: 40 }} />
           </View>
           <View style={styles.textContainer}>
-            <View style={styles.nameContainer}>
-              <Text style={styles.name}>{item.name}</Text>
-              <Text style={styles.time}>{item.time}</Text>
+            <View style={{flexDirection:"row", width: '100%'}}>
+              <View style={styles.nameTimeContainer}>
+                <Text style={styles.name}>{item.name}</Text>
+                <Text style={styles.time}>{item.time}</Text>
+              </View>
             </View>
             <View style={styles.contextContainer}>
               <Text style={styles.context}>{item.context}</Text>

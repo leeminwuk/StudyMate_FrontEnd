@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, TextInput, Image, StyleSheet } from 'react-native';
+import { View, TextInput, Image, StyleSheet, Dimensions } from 'react-native';
+
+const { width } = Dimensions.get('window');
 
 const SearchBar = () => {
   return (
@@ -22,7 +24,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     alignItems: 'center',
     marginLeft: 21,
-    width: 350,
+    marginTop: 8,
+    width: "90%",
     height: 39,
     flexShrink: 0, 
     borderRadius: 12,

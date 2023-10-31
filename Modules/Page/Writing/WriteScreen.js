@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import * as ImagePicker from 'expo-image-picker';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 const WriteScreen = () => {
   const navigation = useNavigation();
   const [images, setImages] = useState([null, null, null]); 

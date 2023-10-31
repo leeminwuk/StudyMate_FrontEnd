@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
+import { width, height } from '../../../constans';
+
 const styles = StyleSheet.create({
   warningButtonContainer: {
     width: 328,
@@ -104,7 +106,8 @@ const styles = StyleSheet.create({
   dropDownContainer: {
     marginTop: 8,
     marginLeft: 24,
-    width: 338,
+    marginRight: 24,
+    width: "auto",
     height: 44,
     backgroundColor: "#ffffff",
     borderRadius: 8,
@@ -124,7 +127,8 @@ const styles = StyleSheet.create({
   inputTextContainer: {
     marginTop: 8,
     marginLeft: 24,
-    width: 338,
+    marginRight: 24,
+    width: "auto",
     height: 44,
     backgroundColor: "#ffffff",
     borderRadius: 8,
@@ -136,7 +140,8 @@ const styles = StyleSheet.create({
   writeTextContainer: {
     marginTop: 8,
     marginLeft: 24,
-    width: 338,
+    marginRight: 24,
+    width: "auto",
     height: 60,
     backgroundColor: "#ffffff",
     borderRadius: 8,
@@ -169,21 +174,21 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   curriculumContainer: {
-    width: 282,
+    width: width - 94,
     height: 32,
     backgroundColor: "#ffffff",
     borderRadius: 8,
     borderColor: "#D0D0D0",
     borderWidth: 1,
     marginLeft: 12,
+    marginRight: 2,
+    justifyContent: "center",
   },
   curriculumText: {
     color: "#D7D7D7",
     fontSize: 12,
     fontWeight: "700",
-    lineHeight: 16,
     marginLeft: 12,
-    marginTop: 6,
   },
   buttonContainer: {
     alignItems: "center",
@@ -191,7 +196,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   button: {
-    width: 292,
+    width: "60%",
     height: 44,
     backgroundColor: "#5884E8",
     borderRadius: 12,

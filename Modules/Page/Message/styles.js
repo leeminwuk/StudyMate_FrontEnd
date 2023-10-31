@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
   header: {
@@ -32,14 +33,15 @@ const styles = StyleSheet.create({
   },
   messageContainer: {
     display: "flex",
-    width: 349,
-    height: 582,
+    width: "auto",
+    height: "88%",
     flexDirection: "column",
     alignItems: "flex-start",
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFF",
     marginLeft: 21,
+    marginRight: 21,
     elevation: 4,
     shadowColor: "#000",
     shadowOffset: {
@@ -50,27 +52,22 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
   },
   chatContainer: {
-    width: 349,
     minHeight: 56,
-    flexShrink: 0,
     paddingLeft: 11,
-    paddingRight: 11,
     paddingBottom: 16,
     flexDirection: "row",
     alignItems: "center",
   },
   textContainer: {
-    display: "flex",
-    width: 259,
     flexDirection: "column",
     alignItems: "flex-start",
     gap: 2,
   },
-  nameContainer: {
+  nameTimeContainer: {
     flexDirection: "row",
-    justifyContent: "space-between", 
-    alignItems: "center",  
-    width: '100%',
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: '85%',
   },
   nestedContainer: {
     marginLeft: 4,
@@ -107,7 +104,6 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 12,
     fontWeight: "600",
-    lineHeight: 16,
   },
 });
 

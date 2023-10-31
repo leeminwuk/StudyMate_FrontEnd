@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { width, height } from "../constans";
 
 const styles = StyleSheet.create({
   //login
@@ -22,27 +23,20 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   customTuner: {
+    marginBottom: 12,
     marginTop: 20,
-    marginLeft: 21,
+    marginRight: 21,
     width: 150,
     height: 215,
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFFFFF",
-    shadowColor: "#7279DF",
-    shadowOffset: {
-      width: 0,
-      height: 3.843583106994629,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 17,
-    elevation: 17,
     flexDirection: "row",
     justifyContent: "space-between",
   },
   nestedContainer: {
-    marginTop: 29,
-    marginLeft: 31,
+    marginTop: 28,
+    marginLeft: 32,
     width: 88,
     height: 88,
     justifyContent: "center",
@@ -88,19 +82,12 @@ const styles = StyleSheet.create({
   longcustomTuner: {
     marginTop: 20,
     marginLeft: 21,
-    width: 357,
+    marginRight: 21,
+    width: "auto",
     height: 98,
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFFFFF",
-    shadowColor: "#7279DF",
-    shadowOffset: {
-      width: 0,
-      height: 3.843583106994629,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 17,
-    elevation: 17,
     flexDirection: "row",
   },
   longnestedContainer: {
@@ -117,14 +104,14 @@ const styles = StyleSheet.create({
   tutorinformationContainer: {
     justifyContent: "center",
   },
-  longtunerName:{
+  longtunerName: {
     marginTop: 21,
     marginLeft: 16,
     color: "#000",
     fontSize: 16,
     fontWeight: "600",
   },
-  longtunerSubject:{
+  longtunerSubject: {
     marginTop: 4,
     marginLeft: 16,
     color: "#5F5F5F",
@@ -137,7 +124,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  longfavoriteText:{
+  longfavoriteText: {
     color: "#5884E8",
     marginLeft: 4,
   },
@@ -155,9 +142,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-selectButtonText: {
-  color : "#ffffff",
-},
+  selectButtonText: {
+    color: "#ffffff",
+  },
   //eixtbutton
   exitButtonContainer: {
     width: 328,
@@ -284,6 +271,7 @@ selectButtonText: {
     fontSize: 12,
     color: "#414141",
     textAlign: "center",
+    marginRight: 4,
   },
   starContainer: {
     flexDirection: "row",

@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
+import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
   title: {
@@ -18,6 +19,7 @@ const styles = StyleSheet.create({
   categoryContainer: {
     marginTop: 16,
     marginLeft: 21,
+    marginBottom: 8,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
@@ -42,12 +44,13 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
   },
   postContainer: {
-    marginTop: 16,
+    marginBottom: 12,
     marginLeft: 21,
+    marginRight: 21,
     justifyContent: "left",
     alignItems: "left",
     backgroundColor: "#FFFFFF",
-    width: 352,
+    width: "auto",
     height: 164,
     borderRadius: 12,
     borderColor: "#D0D0D0",
@@ -56,9 +59,11 @@ const styles = StyleSheet.create({
   postCategory: {
     marginTop: 16,
     marginLeft: 16,
-    paddingHorizontal: 8,
+    width: Platform.OS === 'android' ? 52 : "auto",
+    paddingHorizontal: Platform.OS === 'android' ? 0 : 8,
     height: 20,
     borderRadius: 5,
+    textAlign: "center",
     justifyContent: "center",
     alignItems: "center",
     borderColor: "#5884E8",
@@ -66,17 +71,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
   postText: {
+    textAlign: "center",
     color: "#5884E8",
     fontSize: 12,
     fontWeight: "500",
-    lineHeight: 12,
     letterSpacing: -0.5,
   },
   postTitle: {
     marginLeft: 16,
     marginTop: 16,
     alignItems: "center",
-    justifyContent: "center",
     textAlign: "center",
     flexDirection: "row",
   },
@@ -91,7 +95,6 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 16,
     fontWeight: "600",
-    lineHeight: 16,
     letterSpacing: -0.5,
   },
   postDate: {
@@ -99,7 +102,6 @@ const styles = StyleSheet.create({
     color: "#5F5F5F",
     fontSize: 12,
     fontWeight: "400",
-    lineHeight: 12,
     letterSpacing: -0.5,
   },
   postContent: {
@@ -121,11 +123,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#D0D0D0",
   },
   favoritecommentContainer: {
-    marginTop: 8,
+    marginTop: Platform.OS === 'android' ? 4 : 8,
     marginLeft: 16,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
   },
   favoriteContainer: {
     flexDirection: "row",

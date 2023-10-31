@@ -13,6 +13,10 @@ import Svg, { Rect } from "react-native-svg";
 import ProgressBar from "../../ProgressBar";
 import SearchBar from "../../SearchBar";
 import CustomTuner from "../../CustomTuner";
+import { Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
+
 const HomeScreen = ({ navigation }) => {
   const progressLevel = 80;
 

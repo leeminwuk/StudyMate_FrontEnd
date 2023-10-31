@@ -10,8 +10,7 @@ const  RegistrationButton = () => {
 
   const handlePress = () => {
     setShowButton(false);
-    navigation.navigate("RegistrationScreen"); // 이 부분을 추가합니다.
-
+    navigation.navigate("RegistrationScreen");
   };
 
   return (

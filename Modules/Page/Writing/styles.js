@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
     writeTitle: {
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     },
     titleBox:{
         marginTop: 24,
-        marginLeft: 24,
+        marginLeft: 21,
     },
     titleText:{
         color: "#000",
@@ -56,8 +57,9 @@ const styles = StyleSheet.create({
     },
     inputTextContainer:{
         marginTop: 8,
-        marginLeft: 24,
-        width: 338,
+        marginLeft: 21,
+        marginRight: 21,
+        width: "auto",
         height: 44,
         backgroundColor: "#ffffff",
         borderRadius: 8,
@@ -71,8 +73,8 @@ const styles = StyleSheet.create({
         marginLeft: 24,
     },
     writeBox:{
-        marginTop: 48,
-        marginLeft: 24,
+        marginTop: 24,
+        marginLeft: 21,
     },
     writeText:{
         color: "#000",
@@ -81,9 +83,10 @@ const styles = StyleSheet.create({
     },
     writeTextContainer:{
         marginTop: 8,
-        marginLeft: 24,
+        marginLeft: 21,
+        marginRight: 21,
         marginTop: 8,
-        width: 338,
+        width: "auto",
         height: 292,
         backgroundColor: "#ffffff",
         borderRadius: 8,
@@ -97,7 +100,7 @@ const styles = StyleSheet.create({
         marginTop: 24,
     },
     button:{
-        width: 292,
+        width: "60%",
         height: 44,
         backgroundColor: "#5884E8",
         borderRadius: 12,

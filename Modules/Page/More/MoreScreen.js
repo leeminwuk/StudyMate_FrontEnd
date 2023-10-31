@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView, Modal} from "react-native";
+import { View, Text, Modal} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Svg, { Rect } from "react-native-svg";
 import styles from "./styles";
 import LongCustomTuner from "../../LongCustomTuner";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import RegistrationButton from "../Registration/button";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const MoreScreen = ({ route }) => {
   const navigation = useNavigation();
   const { selectedSubject, topNotification } = route.params || {};
-  const [isModalVisible, setModalVisible] = useState(false); // 모달의 상태를 제어하는 상태 변수
+  const [isModalVisible, setModalVisible] = useState(false); 
 
   const navigateToRegistration = () => {
     navigation.navigate("RegistrationScreen"); 

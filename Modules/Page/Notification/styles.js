@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
   title: {
@@ -20,21 +21,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   notificationcontainer: {
-    marginTop: 17,
+    marginTop: 16,
     marginLeft: 21,
-    width: 351,
+    marginRight: 21,
+    width: "auto",
     height: 76,
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFFFFF",
-    shadowColor: "#7279DF",
-    shadowOffset: {
-      width: 0,
-      height: 3.843583106994629,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 17,
-    elevation: 17,
     flexDirection: "row",
     justifyContent: "space-between",
   },

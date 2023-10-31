@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
   container: {
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
   banner: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: 350,
+    width: "90%",
     height: 210,
     backgroundColor: "#498DE8",
     borderRadius: 20,
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   moreHome: {
-    width: 36,
+    width: "auto",
     height: 20,
     flexShrink: 0,
     color: "#5884E8",
@@ -106,36 +107,33 @@ const styles = StyleSheet.create({
   },
   levelup: {
     marginTop: 20,
-    width: 25,
-    height: 26,
+    width: 28,
+    height: 28,
     marginLeft: 20,
-    flexShrink: 0,
   },
   leveltext: {
     marginTop: 24,
     width: 90,
-    height: 20,
-    flexShrink: 0,
+    height: "auto",
     color: "#000",
     textAlign: "center",
-    //fontFamily: 'Mplus1p-Bold',
     fontSize: 20,
     fontWeight: "700",
   },
   leveltext2: {
-    marginLeft: 21,
     marginTop: 8,
-    width: 216,
+    width: "auto",
+    marginLeft: 20,
     height: 20,
     flexShrink: 0,
-    textAlign: "center",
     fontSize: 11,
   },
   studylevel: {
     marginTop: 20,
-    width: 350,
-    height: 110,
+    width: "%100",
+    height: 120,
     marginLeft: 21,
+    marginRight: 21,
     borderRadius: 12,
     backgroundColor: "#ffffff",
   },

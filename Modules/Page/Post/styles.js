@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
   header: {
@@ -19,10 +20,11 @@ const styles = StyleSheet.create({
     height: 28,
   },
   commentContainer: {
-    width: 352,
+    width: "auto",
     height: 360,
     backgroundColor: "#ffffff",
     marginLeft: 21,
+    marginRight: 21,
     marginTop: 16,
     borderRadius: 12,
     textAlign: "center",
@@ -45,10 +47,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   commentInputContainer: {
-    width: 352,
+    width: "auto",
     height: 48,
     backgroundColor: "#ffffff",
     marginLeft: 21,
+    marginRight: 21,
     marginTop: 16,
     borderRadius: 12,
     textAlign: "center",

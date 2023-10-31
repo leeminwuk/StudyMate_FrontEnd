@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { View, SafeAreaView, TouchableOpacity, Image, Text, TextInput } from "react-native";
+import { View, TouchableOpacity, Image, Text, TextInput } from "react-native";
 import styles from "./styles";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import PostContainer from './PostContainer';
 import CommentBox from './CommentBox';
 import { ScrollView } from "react-native";
 import { useData } from '../../DataContext';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const PostScreen = ({ route }) => {
   const navigation = useNavigation();
