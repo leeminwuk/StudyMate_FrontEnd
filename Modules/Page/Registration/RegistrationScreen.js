@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   View,
   Text,
-  SafeAreaView,
   Image,
   TextInput,
   TouchableOpacity,
@@ -12,6 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 import * as ImagePicker from "expo-image-picker";
 import DropDownPicker from "react-native-dropdown-picker";
 import { ScrollView } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const RegistrationScreen = () => {
   const navigation = useNavigation();
@@ -59,7 +59,7 @@ const RegistrationScreen = () => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 , marginBottom : 12}}>
       <View style={styles.writeTitle}>
         <TouchableOpacity onPress={handleGoToMoreScreen}>
           <Image

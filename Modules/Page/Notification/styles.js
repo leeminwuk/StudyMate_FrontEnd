@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   title: {
-    marginLeft: 21,
+    marginLeft: 24,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -21,26 +21,20 @@ const styles = StyleSheet.create({
   },
   notificationcontainer: {
     marginTop: 17,
-    marginLeft: 21,
-    width: 351,
-    height: 76,
+    marginLeft: 24,
+    marginRight: 24,
+    width: "auto",
+    height: "15%",
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFFFFF",
-    shadowColor: "#7279DF",
-    shadowOffset: {
-      width: 0,
-      height: 3.843583106994629,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 17,
     elevation: 17,
     flexDirection: "row",
     justifyContent: "space-between",
   },
   iconcontainer: {
     marginTop: 4,
-    marginLeft: 21,
+    marginLeft: 24,
     marginRight: 12,
     width: 36,
     height: 36,

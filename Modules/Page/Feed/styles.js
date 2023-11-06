@@ -1,14 +1,14 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   title: {
-    marginLeft: 21,
+    marginLeft: 24,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
   },
   titleText: {
-    marginLeft: 5,
+    marginLeft: 4,
     color: "#000",
     fontSize: 18,
     fontStyle: "normal",
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
   categoryContainer: {
     marginTop: 16,
-    marginLeft: 21,
+    marginLeft: 24,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
-    margin: 4,
+    marginRight : Platform.OS === "ios" ? 8 : 10,
     paddingHorizontal: 12,
     borderColor: "#ADB5BD",
     borderWidth: 0.5,
@@ -43,11 +43,12 @@ const styles = StyleSheet.create({
   },
   postContainer: {
     marginTop: 16,
-    marginLeft: 21,
+    marginLeft: 24,
+    marginRight: 24,
     justifyContent: "left",
     alignItems: "left",
     backgroundColor: "#FFFFFF",
-    width: 352,
+    width: "auto",
     height: 164,
     borderRadius: 12,
     borderColor: "#D0D0D0",
@@ -64,19 +65,19 @@ const styles = StyleSheet.create({
     borderColor: "#5884E8",
     borderWidth: 1,
     backgroundColor: "#FFFFFF",
+    alignSelf: 'flex-start',
   },
   postText: {
     color: "#5884E8",
     fontSize: 12,
     fontWeight: "500",
-    lineHeight: 12,
     letterSpacing: -0.5,
+    marginBottom: Platform.OS === "ios" ? 0 : 2,
   },
   postTitle: {
     marginLeft: 16,
     marginTop: 16,
     alignItems: "center",
-    justifyContent: "center",
     textAlign: "center",
     flexDirection: "row",
   },
@@ -91,15 +92,15 @@ const styles = StyleSheet.create({
     color: "#000",
     fontSize: 16,
     fontWeight: "600",
-    lineHeight: 16,
     letterSpacing: -0.5,
+    textAlign: "center",
   },
   postDate: {
-    marginTop: 4,
+    marginTop: Platform.OS === "ios" ? 4 : 0,
+    marginLeft: 2,
     color: "#5F5F5F",
     fontSize: 12,
     fontWeight: "400",
-    lineHeight: 12,
     letterSpacing: -0.5,
   },
   postContent: {
@@ -121,11 +122,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#D0D0D0",
   },
   favoritecommentContainer: {
-    marginTop: 8,
+    marginTop: Platform.OS === "ios" ? 8 : 4,
     marginLeft: 16,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
   },
   favoriteContainer: {
     flexDirection: "row",

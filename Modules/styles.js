@@ -23,20 +23,12 @@ const styles = StyleSheet.create({
   },
   customTuner: {
     marginTop: 20,
-    marginLeft: 21,
+    marginLeft: 24,
     width: 150,
     height: 215,
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFFFFF",
-    shadowColor: "#7279DF",
-    shadowOffset: {
-      width: 0,
-      height: 3.843583106994629,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 17,
-    elevation: 17,
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -86,26 +78,20 @@ const styles = StyleSheet.create({
     paddingRight: 16, // 위치를 조정하기 위해 오른쪽에 약간의 여유를 둡니다.
   },
   longcustomTuner: {
-    marginTop: 20,
-    marginLeft: 21,
-    width: 357,
+    marginTop:12,
+    marginBottom: 8,
+    marginLeft: 24,
+    marginRight: 24,
+    width: "auto",
     height: 98,
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFFFFF",
-    shadowColor: "#7279DF",
-    shadowOffset: {
-      width: 0,
-      height: 3.843583106994629,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 17,
-    elevation: 17,
     flexDirection: "row",
   },
   longnestedContainer: {
-    marginTop: 21,
-    marginLeft: 21,
+    marginTop: 24,
+    marginLeft: 24,
     width: 56,
     height: 56,
     justifyContent: "center",
@@ -118,7 +104,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   longtunerName:{
-    marginTop: 21,
+    marginTop: 16,
     marginLeft: 16,
     color: "#000",
     fontSize: 16,
@@ -132,7 +118,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
   },
   longfavoriteContainer: {
-    marginTop: 8,
+    marginTop: 4,
     marginLeft: 16,
     flexDirection: "row",
     alignItems: "center",
@@ -146,8 +132,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   selectButton: {
-    marginTop: 8,
-    marginLeft: 16,
     width: 56,
     height: 24,
     borderRadius: 12,
@@ -156,7 +140,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 selectButtonText: {
-  color : "#ffffff",
+  color : "#ffffff",  
+  marginBottom: Platform.OS === "ios" ? 0 : 2,
 },
   //eixtbutton
   exitButtonContainer: {

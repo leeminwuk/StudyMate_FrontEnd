@@ -81,7 +81,7 @@ const FeedScreen = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
         />
       </View>
-      <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+      <ScrollView style={{ flex: 1, marginBottom : 12 }} showsVerticalScrollIndicator={false}>
         {postData.map((post) => (
           <PostContainer
             key={post.id}

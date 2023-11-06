@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, Image, ScrollView, Text } from "react-native";
 import styles from "./styles"; // styles.js 파일에서 스타일 가져오기
 import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const NestedCustomTuner = ({
   image,
@@ -9,6 +10,7 @@ const NestedCustomTuner = ({
   subject,
   favoriteCount,
   onFavoritePress,
+
 }) => {
   return (
     <View style={styles.longnestedContainer}>
@@ -25,6 +27,11 @@ const CustomTuner = ({
   favoriteCount,
   onFavoritePress,
 }) => {
+  const navigation = useNavigation();
+
+  const navigateToGoTutorSelectScreen = () => {
+    navigation.navigate("TutorSelectScreen");
+  };
   return (
     <View style={styles.longcustomTuner}>
       <NestedCustomTuner
@@ -42,7 +49,7 @@ const CustomTuner = ({
           <TouchableOpacity onPress={onFavoritePress}>
             <Image
               source={require("../assets/thumbup.png")}
-              style={{ width: 20, height: 20 }}
+              style={{ width: 16, height: 16 }}
             />
           </TouchableOpacity>
           <Text style={styles.longfavoriteText}>{favoriteCount}</Text>
@@ -50,7 +57,7 @@ const CustomTuner = ({
       </View>
       
       <View style={styles.centeredContainer}>
-        <TouchableOpacity>
+      <TouchableOpacity onPress={navigateToGoTutorSelectScreen}>
           <View style={styles.selectButton}>
             <Text style={styles.selectButtonText}>선택</Text>
           </View>
@@ -106,6 +113,7 @@ const MultipleCustomTuners = () => {
 
   return (
     <ScrollView
+    style={{marginBottom: 20}}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ overflow: "hidden" }}
     >

@@ -14,7 +14,7 @@ const MyGoogleLoginButton = () => {
         <TouchableOpacity
             onPress={handleGoogleLogin}
             style={{
-                width: 300,
+                width: "auto",
                 height: 44,
                 borderRadius: 5,
                 marginBottom: 8,

@@ -14,7 +14,7 @@ const MyKakaoLoginButton = () => {
         <TouchableOpacity
             onPress={handleKakaoLogin}
             style={{
-                width: 300,
+                width: "auto",
                 height: 44,
                 borderRadius: 5,
                 marginBottom: 8,

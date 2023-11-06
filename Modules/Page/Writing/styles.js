@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     writeTitle: {
@@ -57,7 +57,8 @@ const styles = StyleSheet.create({
     inputTextContainer:{
         marginTop: 8,
         marginLeft: 24,
-        width: 338,
+        marginRight: 24,
+        width: "auto",
         height: 44,
         backgroundColor: "#ffffff",
         borderRadius: 8,
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
         marginLeft: 24,
     },
     writeBox:{
-        marginTop: 48,
+        marginTop: 24,
         marginLeft: 24,
     },
     writeText:{
@@ -82,22 +83,21 @@ const styles = StyleSheet.create({
     writeTextContainer:{
         marginTop: 8,
         marginLeft: 24,
-        marginTop: 8,
-        width: 338,
-        height: 292,
+        marginRight: 24,
+        width: "auto",
+        height: Platform.OS === "ios" ? "60%" : "50%",
         backgroundColor: "#ffffff",
         borderRadius: 8,
         borderColor: "#D0D0D0",
         borderWidth: 1,
-        textAlign: "left",
         },
     buttonContainer:{
+        marginTop: 24,
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 24,
     },
     button:{
-        width: 292,
+        width: "60%",
         height: 44,
         backgroundColor: "#5884E8",
         borderRadius: 12,
