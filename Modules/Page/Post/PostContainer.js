@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import styles from "../Feed/styles";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const PostContainer = ({ post, navigation, isTouchable = true, onFavoritePress }) => {
   const [favoriteCount, setFavoriteCount] = useState(0); // 초기값을 0으로 설정

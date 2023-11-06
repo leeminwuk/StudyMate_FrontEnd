@@ -14,7 +14,8 @@ const MyFacebookLoginButton = () => {
         <TouchableOpacity
             onPress={handleFacebookLogin}
             style={{
-                width: 300,
+                width: "auto",
+                marginLeft: 24,
                 height: 44,
                 borderRadius: 5,
                 marginBottom: 8,

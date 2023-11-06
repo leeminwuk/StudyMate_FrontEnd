@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
   header: {
@@ -13,14 +12,16 @@ const styles = StyleSheet.create({
   },
   backbuttonContainer: {
     marginLeft: 24,
-    marginTop: 10,
+    marginTop: 12,
   },
   tutorContainer: {
     alignItems: "center",
   },
   tutorInformation: {
-    width: 338,
-    height: 524,
+    width: "auto",
+    marginLeft: 24,
+    marginRight: 24,
+    height: "auto",
     backgroundColor: "#ffffff",
     alignSelf: "center",
     borderRadius: 12,
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     color: "#5884E8",
     fontSize: 16,
     fontWeight: "600",
-    marginTop: 26,
+    marginTop: 24,
     marginLeft: 4,
   },
   tutorText: {
@@ -147,6 +148,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     alignSelf: "center",
     marginTop: 8,
+    marginBottom: 16,
   },
   selectText: {
     fontSize: 16,
@@ -159,7 +161,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   button: {
-    width: 292,
+    width: "60%",
     height: 44,
     backgroundColor: "#5884E8",
     borderRadius: 12,

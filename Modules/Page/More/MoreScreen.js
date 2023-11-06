@@ -11,7 +11,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const MoreScreen = ({ route }) => {
   const navigation = useNavigation();
   const { selectedSubject, topNotification } = route.params || {};
-  const [isModalVisible, setModalVisible] = useState(false); 
+  const [isModalVisible, setModalVisible] = useState(false); // 모달의 상태를 제어하는 상태 변수
 
   const navigateToRegistration = () => {
     navigation.navigate("RegistrationScreen"); 

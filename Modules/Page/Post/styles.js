@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
   header: {
@@ -23,8 +22,8 @@ const styles = StyleSheet.create({
     width: "auto",
     height: 360,
     backgroundColor: "#ffffff",
-    marginLeft: 21,
-    marginRight: 21,
+    marginLeft: 24,
+    marginRight: 24,
     marginTop: 16,
     borderRadius: 12,
     textAlign: "center",
@@ -50,8 +49,8 @@ const styles = StyleSheet.create({
     width: "auto",
     height: 48,
     backgroundColor: "#ffffff",
-    marginLeft: 21,
-    marginRight: 21,
+    marginLeft: 24,
+    marginRight: 24,
     marginTop: 16,
     borderRadius: 12,
     textAlign: "center",

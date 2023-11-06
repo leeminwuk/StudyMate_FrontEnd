@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
   header: {
@@ -34,44 +33,40 @@ const styles = StyleSheet.create({
   messageContainer: {
     display: "flex",
     width: "auto",
-    height: "88%",
+    marginRight: 24,
+    height: "85%",
     flexDirection: "column",
     alignItems: "flex-start",
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFF",
-    marginLeft: 21,
-    marginRight: 21,
-    elevation: 4,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
+    marginLeft: 24,
   },
   chatContainer: {
+    width: "auto",
     minHeight: 56,
-    paddingLeft: 11,
+    paddingRight: 12,
+    paddingLeft: 12,
     paddingBottom: 16,
     flexDirection: "row",
     alignItems: "center",
   },
   textContainer: {
+    display: "flex",
+    width: "80%",
     flexDirection: "column",
     alignItems: "flex-start",
     gap: 2,
   },
-  nameTimeContainer: {
+  nameContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: '85%',
+    width: "100%",
   },
   nestedContainer: {
     marginLeft: 4,
-    marginRight: 15,
+    marginRight: 12,
     width: 49,
     height: 49,
     justifyContent: "center",
@@ -100,10 +95,11 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     letterSpacing: -0.5,
   },
-  time:{
+  time: {
     color: "#000",
     fontSize: 12,
     fontWeight: "600",
+    lineHeight: 16,
   },
 });
 

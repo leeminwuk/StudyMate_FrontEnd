@@ -1,9 +1,8 @@
-import { Platform, StyleSheet } from "react-native";
-import { width, height } from '../../../constans';
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   title: {
-    marginLeft: 21,
+    marginLeft: 24,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -23,14 +22,14 @@ const styles = StyleSheet.create({
   bellImage: {
     width: 28,
     height: 28,
-    marginRight: 21,
+    marginRight: 24,
   },
   subjectbuttoncontainer: {
-    marginTop: 16,
-    marginLeft: Platform.OS === "ios" ? 21 : 28,
-    width: "auto",
+    marginTop: 15,
+    marginLeft: 24,
     flexDirection: "row",
     flexWrap: "wrap",
+    justifyContent: "flex-start",
     alignItems: "center",
   },
   subjectsellectbutton: {
@@ -53,14 +52,14 @@ const styles = StyleSheet.create({
   },
   moreHome: {
     width: "auto",
-    height: 20,
+    height: "auto",
     flexShrink: 0,
     color: "#5884E8",
     textAlign: "center",
     fontSize: 14,
     fontWeight: "700",
     lineHeight: 18,
-    marginRight: 21,
+    marginRight: 24,
     marginTop: 20,
   },
 });

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { width, height } from '../../../constans';
-
+import { Dimensions } from "react-native";
+const { width } = Dimensions.get("window");
 const maxWidth = width * 0.4; 
 
 const styles = StyleSheet.create({

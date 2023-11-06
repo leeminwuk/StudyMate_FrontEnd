@@ -1,9 +1,7 @@
 import { StyleSheet } from "react-native";
-import { width, height } from '../../../constans';
-
 const styles = StyleSheet.create({
 title: {
-    marginLeft: 21,
+    marginLeft: 24,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -19,7 +17,7 @@ title: {
   bellImage: {
     width: 28,
     height: 28,
-    marginRight: 21,
+    marginRight: 24,
   },
     circleContainer:{
         textAlign: "center",

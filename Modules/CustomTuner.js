@@ -32,7 +32,7 @@ const NestedCustomTuner = ({ image, name, subject, favoriteCount, commentCount, 
 
 const CustomTuner = ({ image, name, subject, favoriteCount, commentCount, onFavoritePress }) => {
   return (
-    <View style={styles.customTuner} >
+    <View style={styles.customTuner}>
       <NestedCustomTuner image={image} name={name} subject={subject} favoriteCount={favoriteCount} commentCount={commentCount} onFavoritePress={onFavoritePress} />
     </View>
   );
@@ -76,15 +76,14 @@ const MultipleCustomTuners = () => {
   );
 
   return (
-    <View style={{marginLeft:21}}>
-      <ScrollView
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={{ overflow: "hidden" }}
-      >
-        {customTuners}
-      </ScrollView>
-    </View>
+    <ScrollView
+    style={{marginRight: 24, marginBottom: 12}}
+      horizontal={true}
+      showsHorizontalScrollIndicator={false} 
+      contentContainerStyle={{ overflow: 'hidden' }}
+    >
+      {customTuners}
+    </ScrollView>
   );
 };
 

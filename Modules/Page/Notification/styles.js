@@ -1,9 +1,8 @@
 import { StyleSheet } from "react-native";
-import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
   title: {
-    marginLeft: 21,
+    marginLeft: 24,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -21,20 +20,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   notificationcontainer: {
-    marginTop: 16,
-    marginLeft: 21,
-    marginRight: 21,
+    marginTop: 17,
+    marginLeft: 24,
+    marginRight: 24,
     width: "auto",
-    height: 76,
+    height: "15%",
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFFFFF",
+    elevation: 17,
     flexDirection: "row",
     justifyContent: "space-between",
   },
   iconcontainer: {
     marginTop: 4,
-    marginLeft: 21,
+    marginLeft: 24,
     marginRight: 12,
     width: 36,
     height: 36,

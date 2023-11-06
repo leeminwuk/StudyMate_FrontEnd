@@ -10,6 +10,7 @@ const NestedCustomTuner = ({
   subject,
   favoriteCount,
   onFavoritePress,
+
 }) => {
   return (
     <View style={styles.longnestedContainer}>
@@ -31,7 +32,6 @@ const CustomTuner = ({
   const navigateToGoTutorSelectScreen = () => {
     navigation.navigate("TutorSelectScreen");
   };
-
   return (
     <View style={styles.longcustomTuner}>
       <NestedCustomTuner
@@ -57,7 +57,7 @@ const CustomTuner = ({
       </View>
       
       <View style={styles.centeredContainer}>
-        <TouchableOpacity onPress={navigateToGoTutorSelectScreen}>
+      <TouchableOpacity onPress={navigateToGoTutorSelectScreen}>
           <View style={styles.selectButton}>
             <Text style={styles.selectButtonText}>선택</Text>
           </View>
@@ -113,6 +113,7 @@ const MultipleCustomTuners = () => {
 
   return (
     <ScrollView
+    style={{marginBottom: 20}}
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{ overflow: "hidden" }}
     >

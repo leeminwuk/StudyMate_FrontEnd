@@ -2,32 +2,31 @@ import React, { useState } from "react";
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
-import * as ImagePicker from 'expo-image-picker';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import * as ImagePicker from "expo-image-picker";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const WriteScreen = () => {
   const navigation = useNavigation();
-  const [images, setImages] = useState([null, null, null]); 
+  const [images, setImages] = useState([null, null, null]);
 
-const handleGoToFeedScreen = () => {
-  navigation.goBack();
-};
+  const handleGoToFeedScreen = () => {
+    navigation.goBack();
+  };
 
-const pickImage = async (index) => {
-  let result = await ImagePicker.launchImageLibraryAsync({
-    mediaTypes: ImagePicker.MediaTypeOptions.All,
-    allowsEditing: true,
-    aspect: [4, 3],
-    quality: 1,
-  });
+  const pickImage = async (index) => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
 
-  if (!result.cancelled) {
-    const updatedImages = [...images];
-    updatedImages[index] = result.uri;
-    setImages(updatedImages);
-  }
-};
-
+    if (!result.cancelled) {
+      const updatedImages = [...images];
+      updatedImages[index] = result.uri;
+      setImages(updatedImages);
+    }
+  };
 
   return (
     <SafeAreaView>
@@ -51,7 +50,7 @@ const pickImage = async (index) => {
           marginTop: 12,
         }}
       ></View>
-     <View style={styles.imageContainer}>
+      <View style={styles.imageContainer}>
         <View>
           <Text style={styles.imageText}>사진</Text>
         </View>
@@ -60,11 +59,19 @@ const pickImage = async (index) => {
             <TouchableOpacity key={index} onPress={() => pickImage(index)}>
               <View style={styles.imageBox}>
                 {image ? (
-                  <Image source={{ uri: image }} style={{ width: 80, height: 80 }} />
+                  <Image
+                    source={{ uri: image }}
+                    style={{ width: 80, height: 80 }}
+                  />
                 ) : (
                   <Image
-                    source={require('../../../assets/photo.png')}
-                    style={{ width: 28, height: 28, marginLeft: 26, marginTop: 18 }}
+                    source={require("../../../assets/photo.png")}
+                    style={{
+                      width: 28,
+                      height: 28,
+                      marginLeft: 26,
+                      marginTop: 18,
+                    }}
                   />
                 )}
               </View>
@@ -77,7 +84,10 @@ const pickImage = async (index) => {
           <Text style={styles.titleText}>제목</Text>
         </View>
         <View style={styles.inputTextContainer}>
-          <TextInput style={{ marginLeft: 12 }} placeholder="제목을 입력하세요." />
+          <TextInput
+            style={{ marginLeft: 12 }}
+            placeholder="제목을 입력하세요."
+          />
         </View>
       </View>
       <View style={styles.writeContainer}>
@@ -90,11 +100,11 @@ const pickImage = async (index) => {
             placeholder="욕설, 부적합한 내용은 삭제 될 수 있습니다."
           />
         </View>
-      </View>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>작성완료</Text>
-        </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>작성완료</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );

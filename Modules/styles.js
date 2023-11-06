@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { width, height } from "../constans";
 
 const styles = StyleSheet.create({
   //login
@@ -23,9 +22,8 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   customTuner: {
-    marginBottom: 12,
     marginTop: 20,
-    marginRight: 21,
+    marginLeft: 24,
     width: 150,
     height: 215,
     flexShrink: 0,
@@ -35,8 +33,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   nestedContainer: {
-    marginTop: 28,
-    marginLeft: 32,
+    marginTop: 29,
+    marginLeft: 31,
     width: 88,
     height: 88,
     justifyContent: "center",
@@ -80,9 +78,10 @@ const styles = StyleSheet.create({
     paddingRight: 16, // 위치를 조정하기 위해 오른쪽에 약간의 여유를 둡니다.
   },
   longcustomTuner: {
-    marginTop: 20,
-    marginLeft: 21,
-    marginRight: 21,
+    marginTop:12,
+    marginBottom: 8,
+    marginLeft: 24,
+    marginRight: 24,
     width: "auto",
     height: 98,
     flexShrink: 0,
@@ -91,8 +90,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   longnestedContainer: {
-    marginTop: 21,
-    marginLeft: 21,
+    marginTop: 24,
+    marginLeft: 24,
     width: 56,
     height: 56,
     justifyContent: "center",
@@ -104,14 +103,14 @@ const styles = StyleSheet.create({
   tutorinformationContainer: {
     justifyContent: "center",
   },
-  longtunerName: {
-    marginTop: 21,
+  longtunerName:{
+    marginTop: 16,
     marginLeft: 16,
     color: "#000",
     fontSize: 16,
     fontWeight: "600",
   },
-  longtunerSubject: {
+  longtunerSubject:{
     marginTop: 4,
     marginLeft: 16,
     color: "#5F5F5F",
@@ -119,12 +118,12 @@ const styles = StyleSheet.create({
     fontWeight: "400",
   },
   longfavoriteContainer: {
-    marginTop: 8,
+    marginTop: 4,
     marginLeft: 16,
     flexDirection: "row",
     alignItems: "center",
   },
-  longfavoriteText: {
+  longfavoriteText:{
     color: "#5884E8",
     marginLeft: 4,
   },
@@ -133,8 +132,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   selectButton: {
-    marginTop: 8,
-    marginLeft: 16,
     width: 56,
     height: 24,
     borderRadius: 12,
@@ -142,9 +139,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  selectButtonText: {
-    color: "#ffffff",
-  },
+selectButtonText: {
+  color : "#ffffff",  
+  marginBottom: Platform.OS === "ios" ? 0 : 2,
+},
   //eixtbutton
   exitButtonContainer: {
     width: 328,
@@ -271,7 +269,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: "#414141",
     textAlign: "center",
-    marginRight: 4,
   },
   starContainer: {
     flexDirection: "row",

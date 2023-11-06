@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import styles from "./styles";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import SelectButton from "./button";
+import SelectButton from "./Button";
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const TutorSelectScreenButton = () => {

@@ -59,7 +59,7 @@ const RegistrationScreen = () => {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={{ flex: 1 , marginBottom : 12}}>
       <View style={styles.writeTitle}>
         <TouchableOpacity onPress={handleGoToMoreScreen}>
           <Image

@@ -14,7 +14,6 @@ import { DataProvider } from './Modules/DataContext';
 import WriteScreen from './Modules/Page/Writing/WriteScreen';
 import RegistrationScreen from './Modules/Page/Registration/RegistrationScreen';
 import TutorSelectScreen from './Modules/Page/TutorSelect/TutorSelectScreen';
-import SelectButton from './Modules/Page/TutorSelect/button';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -35,7 +34,7 @@ const App = () => {
           <Stack.Screen name="WriteScreen" component={WriteScreen} />
           <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
           <Stack.Screen name="TutorSelectScreen" component={TutorSelectScreen} />
-          <Stack.Screen name="SelectButton" component={SelectButton} />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

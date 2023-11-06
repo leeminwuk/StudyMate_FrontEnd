@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { width, height } from '../../../constans';
 
 const styles = StyleSheet.create({
   container: {
@@ -30,8 +29,8 @@ const styles = StyleSheet.create({
   banner: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: "90%",
-    height: 210,
+    width: "auto",
+    height: 240,
     backgroundColor: "#498DE8",
     borderRadius: 20,
     alignSelf: "center",
@@ -43,7 +42,7 @@ const styles = StyleSheet.create({
   },
   bannertext1: {
     width: 92,
-    height: 21,
+    height: 24,
     flexShrink: 0,
     color: "#FFF",
     textAlign: "center",
@@ -70,13 +69,13 @@ const styles = StyleSheet.create({
     flexShrink: 0,
   },
   title: {
-    marginLeft: 21,
+    marginLeft: 24,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
   },
   titleText: {
-    marginLeft: 5,
+    marginLeft: 4,
     color: "#000",
     fontSize: 18,
     fontStyle: "normal",
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "700",
     lineHeight: 18,
-    marginRight: 21,
+    marginRight: 24,
     marginTop: 20,
   },
   levelupContainer: {
@@ -107,33 +106,35 @@ const styles = StyleSheet.create({
   },
   levelup: {
     marginTop: 20,
-    width: 28,
-    height: 28,
+    width: 25,
+    height: 26,
     marginLeft: 20,
+    flexShrink: 0,
   },
   leveltext: {
     marginTop: 24,
     width: 90,
     height: "auto",
+    flexShrink: 0,
     color: "#000",
     textAlign: "center",
     fontSize: 20,
     fontWeight: "700",
   },
   leveltext2: {
+    marginLeft: 24,
     marginTop: 8,
     width: "auto",
-    marginLeft: 20,
     height: 20,
     flexShrink: 0,
     fontSize: 11,
   },
   studylevel: {
     marginTop: 20,
-    width: "%100",
-    height: 120,
-    marginLeft: 21,
-    marginRight: 21,
+    width: "auto",
+    height: 110,
+    marginLeft: 24,
+    marginRight: 24,
     borderRadius: 12,
     backgroundColor: "#ffffff",
   },
