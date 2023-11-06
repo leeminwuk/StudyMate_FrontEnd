@@ -34,7 +34,6 @@ const App = () => {
           <Stack.Screen name="WriteScreen" component={WriteScreen} />
           <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
           <Stack.Screen name="TutorSelectScreen" component={TutorSelectScreen} />
-          
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

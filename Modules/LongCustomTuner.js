@@ -10,7 +10,6 @@ const NestedCustomTuner = ({
   subject,
   favoriteCount,
   onFavoritePress,
-
 }) => {
   return (
     <View style={styles.longnestedContainer}>
@@ -55,9 +54,9 @@ const CustomTuner = ({
           <Text style={styles.longfavoriteText}>{favoriteCount}</Text>
         </View>
       </View>
-      
+
       <View style={styles.centeredContainer}>
-      <TouchableOpacity onPress={navigateToGoTutorSelectScreen}>
+        <TouchableOpacity onPress={navigateToGoTutorSelectScreen}>
           <View style={styles.selectButton}>
             <Text style={styles.selectButtonText}>선택</Text>
           </View>
@@ -90,33 +89,40 @@ const MultipleCustomTuners = () => {
       favoriteCount: 0,
       image: require("../assets/silvergun.png"),
     },
+    {
+      id: "4",
+      name: "신은총",
+      subject: "자바프로그래밍으로 A+ 받아보자!",
+      favoriteCount: 0,
+      image: require("../assets/silvergun.png"),
+    },{
+      id: "5",
+      name: "신은총",
+      subject: "자바프로그래밍으로 A+ 받아보자!",
+      favoriteCount: 0,
+      image: require("../assets/silvergun.png"),
+    },
   ]);
+  const displayedImages = images.slice(0, 3);
 
   const numberOfCustomTuners = images.length;
-  const customTuners = Array.from(
-    { length: numberOfCustomTuners },
-    (_, customIndex) => (
-      <CustomTuner
-        key={customIndex}
-        image={images[customIndex].image}
-        name={images[customIndex].name}
-        subject={images[customIndex].subject}
-        favoriteCount={images[customIndex].favoriteCount}
-        onFavoritePress={() => {
-          const newImages = [...images];
-          newImages[customIndex].favoriteCount++;
-          setImages(newImages);
-        }}
-      />
-    )
-  );
+  const customTuners = displayedImages.map((tuner, index) => (
+    <CustomTuner
+      key={tuner.id}
+      image={tuner.image}
+      name={tuner.name}
+      subject={tuner.subject}
+      favoriteCount={tuner.favoriteCount}
+      onFavoritePress={() => {
+        const newImages = [...images];
+        newImages[index].favoriteCount++;
+        setImages(newImages);
+      }}
+    />
+  ));
 
   return (
-    <ScrollView
-    style={{marginBottom: 20}}
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ overflow: "hidden" }}
-    >
+    <ScrollView>     
       {customTuners}
     </ScrollView>
   );

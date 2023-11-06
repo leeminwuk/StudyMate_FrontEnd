@@ -1,4 +1,4 @@
-import { Platform, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   warningButtonContainer: {
     width: 328,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     marginLeft: 24,
     marginRight: 24,
     width: "auto",
-    height: 44,
+    height: "auto",
     backgroundColor: "#ffffff",
     borderRadius: 8,
     borderColor: "#D0D0D0",
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     marginLeft: 24,
     marginRight: 24,
     width: "auto",
-    height: 44,
+    height: 40,
     backgroundColor: "#ffffff",
     borderRadius: 8,
     borderColor: "#D0D0D0",
@@ -140,13 +140,13 @@ const styles = StyleSheet.create({
     marginLeft: 24,
     marginRight: 24,
     width: "auto",
-    height: 60,
+    height: 40,
     backgroundColor: "#ffffff",
     borderRadius: 8,
     borderColor: "#D0D0D0",
     borderWidth: 1,
-    alignItems: "flex-start",
     textAlign: "left",
+    justifyContent: "center",
   },
   inputText: {
     marginTop: 8,

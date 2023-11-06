@@ -18,14 +18,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   tutorInformation: {
-    width: "auto",
     marginLeft: 24,
     marginRight: 24,
-    height: "auto",
+    marginBottom: 8,
     backgroundColor: "#ffffff",
-    alignSelf: "center",
     borderRadius: 12,
+    flex: 1,
   },
+  
   informationTitle: {
     flexDirection: "row",
     alignItems: "center",
