@@ -33,14 +33,14 @@ const styles = StyleSheet.create({
   messageContainer: {
     display: "flex",
     width: "auto",
-    marginRight: 24,
+    marginRight: 20,
     height: "85%",
     flexDirection: "column",
     alignItems: "flex-start",
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFF",
-    marginLeft: 24,
+    marginLeft: 20,
   },
   chatContainer: {
     width: "auto",

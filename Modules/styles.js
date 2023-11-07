@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
   customTuner: {
     marginTop: 20,
-    marginLeft: 24,
+    marginLeft: 20,
     width: 150,
     height: 215,
     flexShrink: 0,
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   tutorContainer: {
     marginTop: 16,
-    marginLeft: 24,
+    marginLeft: 20,
   },
   tutorName: {
     color: "#000",
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   favoriteContainer: {
     marginTop: 16,
-    marginLeft: 24,
+    marginLeft: 20,
     flexDirection: "row",
     alignItems: "center",
   },
@@ -85,8 +85,8 @@ const styles = StyleSheet.create({
   },
   longcustomTuner: {
     marginBottom: 12,
-    marginLeft: 24,
-    marginRight: 24,
+    marginLeft: 20,
+    marginRight: 20,
     width: "auto",
     height: 98,
     flexShrink: 0,
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
   longnestedContainer: {
     marginTop: 24,
-    marginLeft: 24,
+    marginLeft: 20,
     width: 56,
     height: 56,
     justifyContent: "center",

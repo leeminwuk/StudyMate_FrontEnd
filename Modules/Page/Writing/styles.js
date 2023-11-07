@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       alignItems: "center",
       justifyContent: "space-between",
-      marginLeft: 16,
+      marginLeft: 20,
       marginTop: 8,
     },
     header: {
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     },
     titleBox:{
         marginTop: 24,
-        marginLeft: 24,
+        marginLeft: 20,
     },
     titleText:{
         color: "#000",
@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
     },
     inputTextContainer:{
         marginTop: 8,
-        marginLeft: 24,
-        marginRight: 24,
+        marginLeft: 20,
+        marginRight: 20,
         width: "auto",
         height: 44,
         backgroundColor: "#ffffff",
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
     },
     inputText:{
         marginTop: 8,
-        marginLeft: 24,
+        marginLeft: 20,
     },
     writeBox:{
         marginTop: 24,
-        marginLeft: 24,
+        marginLeft: 20,
     },
     writeText:{
         color: "#000",
@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
     },
     writeTextContainer:{
         marginTop: 8,
-        marginLeft: 24,
-        marginRight: 24,
+        marginLeft: 20,
+        marginRight: 20,
         width: "auto",
         height: Platform.OS === "ios" ? "60%" : "50%",
         backgroundColor: "#ffffff",

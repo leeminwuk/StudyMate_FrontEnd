@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   title: {
-    marginLeft: 24,
+    marginLeft: 20,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -22,11 +22,11 @@ const styles = StyleSheet.create({
   bellImage: {
     width: 28,
     height: 28,
-    marginRight: 24,
+    marginRight: 20,
   },
   subjectbuttoncontainer: {
     marginTop: 12,
-    marginLeft: 24,
+    marginLeft: 20,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "700",
     lineHeight: 18,
-    marginRight: 24,
+    marginRight: 20,
     marginTop: 20,
   },
 });

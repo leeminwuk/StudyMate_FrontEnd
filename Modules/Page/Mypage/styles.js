@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
 title: {
-    marginLeft: 24,
+    marginLeft: 20,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -17,7 +17,7 @@ title: {
   bellImage: {
     width: 28,
     height: 28,
-    marginRight: 24,
+    marginRight: 20,
   },
     circleContainer:{
         textAlign: "center",
@@ -44,7 +44,7 @@ title: {
         alignItems: "center",
         flexDirection: "row",
         marginTop: 44,
-        marginLeft: 24,
+        marginLeft: 20,
     },
     nicknameText:{
         fontSize: 24,
@@ -53,13 +53,14 @@ title: {
         letterSpacing: -0.5,
     },
     hr:{
-        width: 344,
+        width: "auto",
         height: 1,
         backgroundColor: "#A4A4A4",
         alignItems: "center",
         justifyContent: "center",
         marginTop: 24,
-        marginLeft: 24,
+        marginLeft: 20,
+        marginRight: 20,
     },
     appSettingContainer:{
         flexDirection: "row",

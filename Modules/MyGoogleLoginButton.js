@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, View, Image } from 'react-native';
+import { TouchableOpacity, Text, View, Image, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const MyGoogleLoginButton = () => {
@@ -20,11 +20,12 @@ const MyGoogleLoginButton = () => {
                 marginBottom: 8,
                 fontSize: 12,
                 color: '#4a4a4a',
-                backgroundColor: '#ffffff', // White background color for Google
+                backgroundColor: '#ffffff',
                 shadowColor: '#9b9b9b',
                 shadowOffset: { width: 0, height: 2 },
                 shadowOpacity: 1,
                 shadowRadius: 0,
+                elevation: 2,
                 display: 'flex',
                 alignItems: 'center',
                 flexDirection: 'row',

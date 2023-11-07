@@ -40,7 +40,9 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.banner}>
             <View style={styles.bannertext}>
               <Text style={styles.bannertext1}>대학 튜터링 학습</Text>
-              <Text style={styles.bannertext2}>STUDYMATE</Text>
+              <Text style={styles.bannertext2}>STUDY</Text>
+              <Text style={styles.bannertext2}>MATE</Text>
+
             </View>
             <View style={styles.bannerimage}>
               <Image
@@ -103,7 +105,6 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.moreHome}>더보기</Text>
           </TouchableOpacity>
         </View>
-
         <CustomTuner />
       </ScrollView>
     </View>

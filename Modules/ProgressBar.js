@@ -14,7 +14,8 @@ const ProgressBar = ({ progress }) => {
 const styles = StyleSheet.create({
   progressBar: {
     marginLeft: 40,
-    width: 284,
+    marginRight: 40,
+    width: "auto",
     opacity: 0.9,
     height: 24,
     backgroundColor: '#ccc',

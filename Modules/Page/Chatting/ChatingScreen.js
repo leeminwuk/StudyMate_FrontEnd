@@ -5,7 +5,9 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
+  KeyboardAvoidingView,
   FlatList,
+  Platform,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "./styles";
@@ -14,7 +16,7 @@ import { useRoute } from "@react-navigation/native";
 import ExitButton from "../../ExitButton";
 
 const ChattingScreen = () => {
-  const [showExitButton, setShowExitButton] = useState(false); 
+  const [showExitButton, setShowExitButton] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const route = useRoute();
   const { name } = route.params || {};
@@ -25,7 +27,7 @@ const ChattingScreen = () => {
 
   const handleMenuButtonClick = () => {
     setShowExitButton(!showExitButton);
-    setShowMenu(false);  
+    setShowMenu(false);
   };
   const handleGoToMoreScreen = () => {
     navigation.goBack();
@@ -75,56 +77,59 @@ const ChattingScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {showMenu && (
-        <TouchableOpacity style={styles.menuButton} onPress={handleMenuButtonClick}>
-          <Text style={styles.exitText}>튜터링 그만하기</Text>
-        </TouchableOpacity>
-      )}
-      <View style={styles.header}>
-        <View style={styles.title}>
-          <TouchableOpacity onPress={handleGoToMoreScreen}>
+        {showMenu && (
+          <TouchableOpacity
+            style={styles.menuButton}
+            onPress={handleMenuButtonClick}
+          >
+            <Text style={styles.exitText}>튜터링 그만하기</Text>
+          </TouchableOpacity>
+        )}
+        <View style={styles.header}>
+          <View style={styles.title}>
+            <TouchableOpacity onPress={handleGoToMoreScreen}>
+              <Image
+                source={require("../../../assets/backbutton.png")}
+                style={{ width: 12, height: 16 }}
+              />
+            </TouchableOpacity>
+            <Text style={styles.name}>{name || "홍길동"}</Text>
+          </View>
+          <TouchableOpacity onPress={() => setShowMenu(!showMenu)}>
             <Image
-              source={require("../../../assets/backbutton.png")}
-              style={{ width: 12, height: 16 }}
+              source={require("../../../assets/kebabIcon.png")}
+              style={styles.kebabIcon}
             />
           </TouchableOpacity>
-          <Text style={styles.name}>{name || "홍길동"}</Text>
         </View>
-        <TouchableOpacity onPress={() => setShowMenu(!showMenu)}>
-          <Image
-            source={require("../../../assets/kebabIcon.png")}
-            style={styles.kebabIcon}
-          />
-        </TouchableOpacity>
-      </View>
-      
-      <FlatList
-        data={messages}
-        renderItem={renderMessage}
-        keyExtractor={(item) => item.id}
-        style={{ flex: 1 }}
-      />
-      <View style={styles.inputChat}>
-        <TouchableOpacity onPress={() => setShowExitButton(true)}>
-          <Image
-            source={require("../../../assets/plusIcon.png")}
-            style={styles.plusIcon}
-          />
-        </TouchableOpacity>
-        <TextInput
-          style={styles.inputText}
-          placeholder="메세지를 입력하세요."
-          value={input}
-          onChangeText={setInput}
+
+        <FlatList
+          data={messages}
+          renderItem={renderMessage}
+          keyExtractor={(item) => item.id}
+          style={{ flex: 1 }}
         />
-        <TouchableOpacity onPress={handleSendMessage}>
-          <Image
-            source={require("../../../assets/sendIcon.png")}
-            style={styles.sendIcon}
+        <View style={styles.inputChat}>
+          <TouchableOpacity onPress={() => setShowExitButton(true)}>
+            <Image
+              source={require("../../../assets/plusIcon.png")}
+              style={styles.plusIcon}
+            />
+          </TouchableOpacity>
+          <TextInput
+            style={styles.inputText}
+            placeholder="메세지를 입력하세요."
+            value={input}
+            onChangeText={setInput}
           />
-        </TouchableOpacity>
-      </View>
-      {showExitButton && <ExitButton />}
+          <TouchableOpacity onPress={handleSendMessage}>
+            <Image
+              source={require("../../../assets/sendIcon.png")}
+              style={styles.sendIcon}
+            />
+          </TouchableOpacity>
+        </View>
+        {showExitButton && <ExitButton />}
     </SafeAreaView>
   );
 };

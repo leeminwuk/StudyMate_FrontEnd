@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   title: {
-    marginLeft: 24,
+    marginLeft: 20,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     flexShrink: 0,
     borderRadius: 12,
     backgroundColor: "#FFFFFF",
-    elevation: 17,
     flexDirection: "row",
     justifyContent: "space-between",
   },

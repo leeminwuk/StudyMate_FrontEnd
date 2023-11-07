@@ -29,19 +29,21 @@ const styles = StyleSheet.create({
   banner: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: "auto",
+    width: "90%",
     height: 212,
     backgroundColor: "#498DE8",
     borderRadius: 20,
     alignSelf: "center",
     marginVertical: 5,
+    marginLeft: 20,
+    marginRight: 20,
   },
   bannertext: {
-    marginLeft: 7,
+    marginLeft: 20,
     marginTop: 46,
   },
   bannertext1: {
-    width: 92,
+    width: "auto",
     height: 24,
     flexShrink: 0,
     color: "#FFF",
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
   },
   bannertext2: {
-    width: 128,
+    width: "auto",
     flexShrink: 0,
     color: "#FFF",
     textAlign: "center",
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
     flexShrink: 0,
   },
   title: {
-    marginLeft: 24,
+    marginLeft: 20,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -96,7 +98,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "700",
     lineHeight: 18,
-    marginRight: 24,
+    marginRight: 20,
     marginTop: 20,
   },
   levelupContainer: {
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   leveltext2: {
-    marginLeft: 24,
+    marginLeft: 20,
     marginTop: 8,
     width: "auto",
     height: 20,
@@ -132,9 +134,9 @@ const styles = StyleSheet.create({
   studylevel: {
     marginTop: 20,
     width: "auto",
-    height: 110,
-    marginLeft: 24,
-    marginRight: 24,
+    height: 120,
+    marginLeft: 20,
+    marginRight: 20,
     borderRadius: 12,
     backgroundColor: "#ffffff",
   },

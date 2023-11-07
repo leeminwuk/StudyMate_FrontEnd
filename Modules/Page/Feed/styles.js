@@ -2,7 +2,7 @@ import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   title: {
-    marginLeft: 24,
+    marginLeft: 20,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
   categoryContainer: {
     marginTop: 16,
-    marginLeft: 24,
+    marginLeft: 20,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
-    marginRight : Platform.OS === "ios" ? 8 : 10,
+    marginRight : Platform.OS === "ios" ? 10 : 12,
     paddingHorizontal: 12,
     borderColor: "#ADB5BD",
     borderWidth: 0.5,
@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
   },
   postContainer: {
     marginTop: 16,
-    marginLeft: 24,
-    marginRight: 24,
+    marginLeft: 20,
+    marginRight: 20,
     justifyContent: "left",
     alignItems: "left",
     backgroundColor: "#FFFFFF",

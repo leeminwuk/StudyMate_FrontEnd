@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   title: {
-    marginLeft: 24,
+    marginLeft: 20,
     flexDirection: "row",
     alignItems: "center",
     marginTop: 20,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     fontStyle: "normal",
     fontWeight: "600",
     lineHeight: 18,
-    marginRight: 24,
+    marginRight: 20,
   },
 });
 

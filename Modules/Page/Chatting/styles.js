@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   menuButton: {
     position: 'absolute',
-    top: Platform.OS === "ios" ? 95 : 60,  
+    top: Platform.OS === "ios" ? 95 : 70,  
     right: 20,
     padding: 10,
     width: "auto",

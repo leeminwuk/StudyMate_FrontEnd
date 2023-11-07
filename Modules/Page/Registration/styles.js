@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   titleBox: {
     marginTop: 24,
-    marginLeft: 24,
+    marginLeft: 20,
   },
   titleText: {
     color: "#000",
@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
   },
   dropDownContainer: {
     marginTop: 8,
-    marginLeft: 24,
-    marginRight: 24,
+    marginLeft: 20,
+    marginRight: 20,
     width: "auto",
     height: "auto",
     backgroundColor: "#ffffff",
@@ -124,8 +124,8 @@ const styles = StyleSheet.create({
   },
   inputTextContainer: {
     marginTop: 8,
-    marginLeft: 24,
-    marginRight: 24,
+    marginLeft: 20,
+    marginRight: 20,
     width: "auto",
     height: 40,
     backgroundColor: "#ffffff",
@@ -137,8 +137,8 @@ const styles = StyleSheet.create({
   },
   writeTextContainer: {
     marginTop: 8,
-    marginLeft: 24,
-    marginRight: 24,
+    marginLeft: 20,
+    marginRight: 20,
     width: "auto",
     height: 40,
     backgroundColor: "#ffffff",
@@ -150,11 +150,11 @@ const styles = StyleSheet.create({
   },
   inputText: {
     marginTop: 8,
-    marginLeft: 24,
+    marginLeft: 20,
   },
   subjectwriteBox: {
     marginTop: 24,
-    marginLeft: 24,
+    marginLeft: 20,
   },
   subjectText: {
     color: "#000",

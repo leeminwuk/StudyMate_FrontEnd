@@ -16,15 +16,15 @@ const styles = StyleSheet.create({
     borderBottomColor: "#D8D8D8",
   },
   backbuttonContainer: {
-    marginLeft: 24,
+    marginLeft: 20,
     marginTop: 12,
   },
   tutorContainer: {
     alignItems: "center",
   },
   tutorInformation: {
-    marginLeft: 24,
-    marginRight: 24,
+    marginLeft: 20,
+    marginRight: 20,
     marginBottom: 8,
     backgroundColor: "#ffffff",
     borderRadius: 12,
@@ -39,11 +39,11 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "bold",
     marginTop: 24,
-    marginLeft: 24,
+    marginLeft: 20,
   },
   thumbupContainer: {
     flexDirection: "row",
-    marginRight: 24,
+    marginRight: 20,
   },
   favoriteText: {
     color: "#5884E8",
@@ -56,12 +56,12 @@ const styles = StyleSheet.create({
     color: "#A8A8A8",
     fontSize: 14,
     fontWeight: "600",
-    marginLeft: 24,
+    marginLeft: 20,
   },
   informationTextContainer: {
     marginTop: 20,
-    marginLeft: 24,
-    marginRight: 24,
+    marginLeft: 20,
+    marginRight: 20,
   },
   informationText: {
     color: "#717171",
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   },
   weekcurriculumTitle: {
     flexDirection: "row",
-    marginLeft: 24,
+    marginLeft: 20,
     marginTop: 12,
     alignItems: "center",
   },
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   weekcurriculumContainer: {
-    marginLeft: 24,
+    marginLeft: 20,
   },
   curriculumBox: {
     flexDirection: "row",
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   },
   reviewTitle: {
     flexDirection: "row",
-    marginLeft: 24,
+    marginLeft: 20,
     marginTop: 12,
     alignItems: "center",
   },
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   reviewContainer: {
-    marginLeft: 24,
+    marginLeft: 20,
     marginTop: 8,
   },
   ratingContainer: {
@@ -181,14 +181,14 @@ const styles = StyleSheet.create({
   },
   exitButtonContainer: {
     width: "80%",
-    height: Platform.OS === "ios" ? "30%" : "35%",
+    height: Platform.OS === "ios" ? "25%" : "25%",
     backgroundColor: "#ffffff",
     position: "absolute",
     top: "50%",
     left: "50%",
     transform: [
       { translateX: -(width * 0.8) / 2 },
-      { translateY: -(height * 0.35) / 2 },
+      { translateY: -(height * 0.3) / 2 },
     ],
     borderRadius: 10,
     justifyContent: "center",

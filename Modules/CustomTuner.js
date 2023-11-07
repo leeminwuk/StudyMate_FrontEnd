@@ -77,7 +77,7 @@ const MultipleCustomTuners = () => {
 
   return (
     <ScrollView
-    style={{marginRight: 24, marginBottom: 12}}
+    style={{marginRight : 20, marginBottom: 12}}
       horizontal={true}
       showsHorizontalScrollIndicator={false} 
       contentContainerStyle={{ overflow: 'hidden' }}

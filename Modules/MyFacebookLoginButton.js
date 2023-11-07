@@ -15,7 +15,7 @@ const MyFacebookLoginButton = () => {
             onPress={handleFacebookLogin}
             style={{
                 width: "auto",
-                marginLeft: 24,
+                marginLeft: 20,
                 height: 44,
                 borderRadius: 5,
                 marginBottom: 8,

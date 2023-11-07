@@ -21,6 +21,7 @@ const MyAppleLoginButton = () => {
                 shadowColor: '#9b9b9b',
                 shadowOffset: { width: 0, height: 2 },
                 shadowOpacity: 1,
+                elevation: 2,
                 shadowRadius: 0,
                 display: 'flex',
                 alignItems: 'center',
