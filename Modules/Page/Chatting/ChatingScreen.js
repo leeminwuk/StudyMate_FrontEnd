@@ -77,7 +77,7 @@ const ChattingScreen = () => {
     <SafeAreaView style={styles.container}>
       {showMenu && (
         <TouchableOpacity style={styles.menuButton} onPress={handleMenuButtonClick}>
-          <Text style={{color: "#FF6565"}}>튜터링 그만하기</Text>
+          <Text style={styles.exitText}>튜터링 그만하기</Text>
         </TouchableOpacity>
       )}
       <View style={styles.header}>

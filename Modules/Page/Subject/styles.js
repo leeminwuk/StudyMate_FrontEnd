@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     marginRight: 24,
   },
   subjectbuttoncontainer: {
-    marginTop: 15,
+    marginTop: 12,
     marginLeft: 24,
     flexDirection: "row",
     flexWrap: "wrap",
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   subjectsellectbutton: {
-    width: 108,
+    width: Platform.OS === "ios" ? 108 : 112,
     height: 80,
     backgroundColor: "#ffffff",
     borderRadius: 14,
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: 12,
   },
   moreHome: {
     width: "auto",

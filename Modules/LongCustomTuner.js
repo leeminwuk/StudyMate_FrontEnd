@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Image, ScrollView, Text } from "react-native";
+import { View, Image, ScrollView, Text, Platform } from "react-native";
 import styles from "./styles"; // styles.js 파일에서 스타일 가져오기
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -55,7 +55,7 @@ const CustomTuner = ({
           <Text style={styles.longfavoriteText}>{favoriteCount}</Text>
         </View>
       </View>
-      
+
       <View style={styles.centeredContainer}>
       <TouchableOpacity onPress={navigateToGoTutorSelectScreen}>
           <View style={styles.selectButton}>
@@ -90,7 +90,43 @@ const MultipleCustomTuners = () => {
       favoriteCount: 0,
       image: require("../assets/silvergun.png"),
     },
+    {
+      id: "3",
+      name: "신은총",
+      subject: "자바프로그래밍으로 A+ 받아보자!",
+      favoriteCount: 0,
+      image: require("../assets/silvergun.png"),
+    },
+    {
+      id: "4",
+      name: "신은총",
+      subject: "자바프로그래밍으로 A+ 받아보자!",
+      favoriteCount: 0,
+      image: require("../assets/silvergun.png"),
+    },
+    {
+      id: "5",
+      name: "신은총",
+      subject: "자바프로그래밍으로 A+ 받아보자!",
+      favoriteCount: 0,
+      image: require("../assets/silvergun.png"),
+    },
+    {
+      id: "6",
+      name: "신은총",
+      subject: "자바프로그래밍으로 A+ 받아보자!",
+      favoriteCount: 0,
+      image: require("../assets/silvergun.png"),
+    },
+    {
+      id: "7",
+      name: "신은총",
+      subject: "자바프로그래밍으로 A+ 받아보자!",
+      favoriteCount: 0,
+      image: require("../assets/silvergun.png"),
+    },
   ]);
+  //const displayedImages = images.slice(0, 3);
 
   const numberOfCustomTuners = images.length;
   const customTuners = Array.from(
@@ -112,11 +148,10 @@ const MultipleCustomTuners = () => {
   );
 
   return (
-    <ScrollView
-    style={{marginBottom: 20}}
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={{ overflow: "hidden" }}
-    >
+    <ScrollView 
+    style={styles.longContainer}
+    contentContainerStyle={{flexGrow: 1, paddingBottom: Platform.OS === "ios" ? 0 : 80}}
+    > 
       {customTuners}
     </ScrollView>
   );

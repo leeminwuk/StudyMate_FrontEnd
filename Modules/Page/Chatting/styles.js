@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import { Dimensions } from "react-native";
 const { width } = Dimensions.get("window");
 const maxWidth = width * 0.4; 
@@ -95,18 +95,20 @@ const styles = StyleSheet.create({
   },
   menuButton: {
     position: 'absolute',
-    top: 100,  
+    top: Platform.OS === "ios" ? 95 : 60,  
     right: 20,
-    width: 104,
-    height: 40,
+    padding: 10,
+    width: "auto",
+    height: "auto",
     backgroundColor: '#fff',
     borderColor: '#ccc', 
     borderWidth:1,
     borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
     elevation: 9999,  
     zIndex: 9,
+  },
+  exitText: {
+    color: "#FF6565",
   },
 });
 

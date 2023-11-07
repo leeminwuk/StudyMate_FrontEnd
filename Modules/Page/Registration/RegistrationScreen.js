@@ -147,7 +147,7 @@ const RegistrationScreen = () => {
           </View>
           <View style={styles.writeTextContainer}>
             <TextInput
-              style={{ marginLeft: 12, marginTop: 12 }}
+              style={{ marginLeft: 12 }}
               placeholder="욕설, 부적합한 내용은 삭제 될 수 있습니다."
             />
           </View>

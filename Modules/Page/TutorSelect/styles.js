@@ -1,4 +1,9 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
+import { Dimensions } from 'react-native';
+
+const window = Dimensions.get('window');
+const height = window.height;
+const width = window.width;
 
 const styles = StyleSheet.create({
   header: {
@@ -18,14 +23,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   tutorInformation: {
-    width: "auto",
     marginLeft: 24,
     marginRight: 24,
-    height: "auto",
+    marginBottom: 8,
     backgroundColor: "#ffffff",
-    alignSelf: "center",
     borderRadius: 12,
+    flex: 1,
   },
+
   informationTitle: {
     flexDirection: "row",
     alignItems: "center",
@@ -175,38 +180,25 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   exitButtonContainer: {
-    width: 328,
-    height: 244,
+    width: "80%",
+    height: Platform.OS === "ios" ? "30%" : "35%",
     backgroundColor: "#ffffff",
     position: "absolute",
-    top: 300,
-    left: 32,
+    top: "50%",
+    left: "50%",
+    transform: [
+      { translateX: -(width * 0.8) / 2 },
+      { translateY: -(height * 0.35) / 2 },
+    ],
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
     zIndex: 1,
     elevation: 1,
-    textAlign: "center",
     borderWidth: 1,
     borderColor: "#ADADAD",
   },
-  textratingContainer: {},
-  ratingButtonContainer: {
-    width: 328,
-    height: 244,
-    backgroundColor: "#ffffff",
-    position: "absolute",
-    top: 300,
-    left: 32,
-    borderRadius: 10,
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 1,
-    elevation: 1,
-    textAlign: "center",
-    borderWidth: 1,
-    borderColor: "#ADADAD",
-  },
+
   selecttext1: {
     fontSize: 20,
     color: "#717171",
@@ -217,12 +209,13 @@ const styles = StyleSheet.create({
     color: "#717171",
   },
   okButton: {
-    width: 124,
+    width: "40%",
     height: 36,
     backgroundColor: "#5884E8",
     borderRadius: 10,
     justifyContent: "center",
     marginRight: 8,
+    marginTop: 24,
   },
   okText: {
     textAlign: "center",
@@ -238,6 +231,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 8,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(218, 218, 218, 0.5)", // 반투명 배경
   },
 });
 export default styles;

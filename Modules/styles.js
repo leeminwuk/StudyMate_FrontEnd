@@ -1,5 +1,9 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
+import { Dimensions } from 'react-native';
 
+const window = Dimensions.get('window');
+const height = window.height;
+const width = window.width;
 const styles = StyleSheet.create({
   //login
   logincontainer: {
@@ -70,16 +74,17 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     marginLeft: 8,
   },
-  //
   centeredContainer: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "flex-end", // 아이템을 오른쪽으로 정렬합니다.
-    paddingRight: 16, // 위치를 조정하기 위해 오른쪽에 약간의 여유를 둡니다.
+    alignItems: "flex-end",
+    paddingRight: 16,
+  },
+  longContainer:{
+    height: 420,
   },
   longcustomTuner: {
-    marginTop:12,
-    marginBottom: 8,
+    marginBottom: 12,
     marginLeft: 24,
     marginRight: 24,
     width: "auto",
@@ -143,37 +148,41 @@ selectButtonText: {
   color : "#ffffff",  
   marginBottom: Platform.OS === "ios" ? 0 : 2,
 },
-  //eixtbutton
-  exitButtonContainer: {
-    width: 328,
-    height: 244,
+   //eixtbutton
+   exitButtonContainer: {
+    width: "80%",
+    height: Platform.OS === "ios" ? "30%" : "35%",
     backgroundColor: "#ffffff",
     position: "absolute",
-    top: 300,
-    left: 32,
-    borderRadius: 10,
+    top: "50%",
+    left: "50%",
+    transform: [
+      { translateX: -(width * 0.8) / 2 },
+      { translateY: -(height * 0.35) / 2 },
+    ],    borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
     zIndex: 1,
     elevation: 1,
-    textAlign: "center",
     borderWidth: 1,
     borderColor: "#ADADAD",
   },
   textratingContainer: {},
   ratingButtonContainer: {
-    width: 328,
-    height: 244,
+    width: "80%",
+    height: Platform.OS === "ios" ? "30%" : "35%",
     backgroundColor: "#ffffff",
     position: "absolute",
-    top: 300,
-    left: 32,
-    borderRadius: 10,
+    top: "50%",
+    left: "50%",
+    transform: [
+      { translateX: -(width * 0.8) / 2 },
+      { translateY: -(height * 0.35) / 2 },
+    ],    borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
     zIndex: 1,
     elevation: 1,
-    textAlign: "center",
     borderWidth: 1,
     borderColor: "#ADADAD",
   },
@@ -294,6 +303,12 @@ selectButtonText: {
     fontWeight: "700",
     lineHeight: 18,
     letterSpacing: -0.5,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(218, 218, 218, 0.5)', // 반투명 배경
   },
 });
 

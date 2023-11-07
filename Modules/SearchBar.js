@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row', 
     alignItems: 'center',
-    marginLeft: 24,
+    marginLeft: 21,
     marginTop: 8,
     marginRight: 24,
     width:"auto",
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     flexShrink: 0, 
     borderRadius: 12,
     backgroundColor: '#FFF',
-    elevation: 5, 
+    elevation: 1, 
   },
   input: {
     flex: 1,
