@@ -77,12 +77,14 @@ const styles = StyleSheet.create({
   centeredContainer: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "flex-end", // 아이템을 오른쪽으로 정렬합니다.
-    paddingRight: 16, // 위치를 조정하기 위해 오른쪽에 약간의 여유를 둡니다.
+    alignItems: "flex-end",
+    paddingRight: 16,
+  },
+  longContainer:{
+    height: 420,
   },
   longcustomTuner: {
-    marginTop:12,
-    marginBottom: 8,
+    marginBottom: 12,
     marginLeft: 24,
     marginRight: 24,
     width: "auto",
@@ -156,7 +158,7 @@ selectButtonText: {
     left: "50%",
     transform: [
       { translateX: -(width * 0.8) / 2 },
-      Platform.OS === "ios" ? { translateY: -(height * 0.2) / 2 } : { translateY: -(height * 0.3) / 2 },
+      { translateY: -(height * 0.35) / 2 },
     ],    borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
@@ -175,7 +177,7 @@ selectButtonText: {
     left: "50%",
     transform: [
       { translateX: -(width * 0.8) / 2 },
-      Platform.OS === "ios" ? { translateY: -(height * 0.2) / 2 } : { translateY: -(height * 0.3) / 2 },
+      { translateY: -(height * 0.35) / 2 },
     ],    borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
@@ -301,6 +303,12 @@ selectButtonText: {
     fontWeight: "700",
     lineHeight: 18,
     letterSpacing: -0.5,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(218, 218, 218, 0.5)', // 반투명 배경
   },
 });
 

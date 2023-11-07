@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Image, ScrollView, Text } from "react-native";
+import { View, Image, ScrollView, Text, Platform } from "react-native";
 import styles from "./styles"; // styles.js 파일에서 스타일 가져오기
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -90,39 +90,67 @@ const MultipleCustomTuners = () => {
       image: require("../assets/silvergun.png"),
     },
     {
+      id: "3",
+      name: "신은총",
+      subject: "자바프로그래밍으로 A+ 받아보자!",
+      favoriteCount: 0,
+      image: require("../assets/silvergun.png"),
+    },
+    {
       id: "4",
       name: "신은총",
       subject: "자바프로그래밍으로 A+ 받아보자!",
       favoriteCount: 0,
       image: require("../assets/silvergun.png"),
-    },{
+    },
+    {
       id: "5",
       name: "신은총",
       subject: "자바프로그래밍으로 A+ 받아보자!",
       favoriteCount: 0,
       image: require("../assets/silvergun.png"),
     },
+    {
+      id: "6",
+      name: "신은총",
+      subject: "자바프로그래밍으로 A+ 받아보자!",
+      favoriteCount: 0,
+      image: require("../assets/silvergun.png"),
+    },
+    {
+      id: "7",
+      name: "신은총",
+      subject: "자바프로그래밍으로 A+ 받아보자!",
+      favoriteCount: 0,
+      image: require("../assets/silvergun.png"),
+    },
   ]);
-  const displayedImages = images.slice(0, 3);
+  //const displayedImages = images.slice(0, 3);
 
   const numberOfCustomTuners = images.length;
-  const customTuners = displayedImages.map((tuner, index) => (
-    <CustomTuner
-      key={tuner.id}
-      image={tuner.image}
-      name={tuner.name}
-      subject={tuner.subject}
-      favoriteCount={tuner.favoriteCount}
-      onFavoritePress={() => {
-        const newImages = [...images];
-        newImages[index].favoriteCount++;
-        setImages(newImages);
-      }}
-    />
-  ));
+  const customTuners = Array.from(
+    { length: numberOfCustomTuners },
+    (_, customIndex) => (
+      <CustomTuner
+        key={customIndex}
+        image={images[customIndex].image}
+        name={images[customIndex].name}
+        subject={images[customIndex].subject}
+        favoriteCount={images[customIndex].favoriteCount}
+        onFavoritePress={() => {
+          const newImages = [...images];
+          newImages[customIndex].favoriteCount++;
+          setImages(newImages);
+        }}
+      />
+    )
+  );
 
   return (
-    <ScrollView>     
+    <ScrollView 
+    style={styles.longContainer}
+    contentContainerStyle={{flexGrow: 1, paddingBottom: Platform.OS === "ios" ? 0 : 80}}
+    > 
       {customTuners}
     </ScrollView>
   );
