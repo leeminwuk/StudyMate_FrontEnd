@@ -10,6 +10,7 @@ const NestedCustomTuner = ({
   subject,
   favoriteCount,
   onFavoritePress,
+
 }) => {
   return (
     <View style={styles.longnestedContainer}>
@@ -56,7 +57,7 @@ const CustomTuner = ({
       </View>
 
       <View style={styles.centeredContainer}>
-        <TouchableOpacity onPress={navigateToGoTutorSelectScreen}>
+      <TouchableOpacity onPress={navigateToGoTutorSelectScreen}>
           <View style={styles.selectButton}>
             <Text style={styles.selectButtonText}>선택</Text>
           </View>
