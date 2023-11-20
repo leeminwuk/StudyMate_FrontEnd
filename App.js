@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import NotificationScreen from './Modules/Page/Notification/Notification';
 import LoginScreen from './Modules/Login';
+import HomeScreen from './Modules/Page/Home/HomeScreen';
 import BottomNavigationBar from './Modules/BottomNavigationBar';
 import MoreScreen from './Modules/Page/More/MoreScreen';
 import MessageScreen from './Modules/Page/Message/MessageScreen';
@@ -14,6 +15,8 @@ import { DataProvider } from './Modules/DataContext';
 import WriteScreen from './Modules/Page/Writing/WriteScreen';
 import RegistrationScreen from './Modules/Page/Registration/RegistrationScreen';
 import TutorSelectScreen from './Modules/Page/TutorSelect/TutorSelectScreen';
+import SignupScreen from './Modules/Signup/SignupScreen';
+import Login2Screen from './Modules/Login2/LoginScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -24,6 +27,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
           <Stack.Screen name="Main" component={BottomNavigationBar} />
           <Stack.Screen name="Notification" component={NotificationScreen} />
           <Stack.Screen name="MoreScreen" component={MoreScreen} />
@@ -34,6 +38,8 @@ const App = () => {
           <Stack.Screen name="WriteScreen" component={WriteScreen} />
           <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
           <Stack.Screen name="TutorSelectScreen" component={TutorSelectScreen} />
+          <Stack.Screen name="SignupScreen" component={SignupScreen} />
+          <Stack.Screen name="Login2Screen" component={Login2Screen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

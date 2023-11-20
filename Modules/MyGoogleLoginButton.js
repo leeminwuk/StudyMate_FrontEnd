@@ -7,7 +7,7 @@ const MyGoogleLoginButton = () => {
 
     const handleGoogleLogin = () => {
         console.log('Google login clicked!');
-        navigation.navigate('Main', { screen: 'Home' });
+        navigation.navigate('SignupScreen');
     };
 
     return (

@@ -7,7 +7,7 @@ const MyKakaoLoginButton = () => {
 
     const handleKakaoLogin = () => {
         console.log('Kakao login clicked!');
-        navigation.navigate('Main', { screen: 'Home' });
+        navigation.navigate('Login2Screen');
     };
 
     return (

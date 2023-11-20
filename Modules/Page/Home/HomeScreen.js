@@ -13,8 +13,11 @@ import Svg, { Rect } from "react-native-svg";
 import ProgressBar from "../../ProgressBar";
 import SearchBar from "../../SearchBar";
 import CustomTuner from "../../CustomTuner";
-const HomeScreen = ({ navigation }) => {
+import { SafeAreaView } from 'react-native-safe-area-context';
+const HomeScreen = ({ route, navigation }) => {
   const progressLevel = 80;
+  const username = route.params?.username;
+  console.log("Username on HomeScreen:", username);
 
   const handleMore = () => {
     navigation.navigate("MoreScreen");
@@ -23,13 +26,12 @@ const HomeScreen = ({ navigation }) => {
   const statusBarHeight = Platform.OS === "ios" ? 20 : StatusBar.currentHeight;
 
   return (
-    <View style={{ flex: 1 }}>
       <ScrollView
         style={{ flex: 1, backgroundColor: "#f5f5f5" }}
         showsVerticalScrollIndicator={false}
       >
         <View style={[styles.header, { paddingTop: statusBarHeight }]}>
-          <Text style={styles.greeting}>안녕하세요! 이민욱님</Text>
+        <Text style={styles.greeting}>안녕하세요! {username}님</Text>
           <Image
             source={require("../../../assets/profile.png")}
             style={styles.profileImage}
@@ -107,7 +109,6 @@ const HomeScreen = ({ navigation }) => {
         </View>
         <CustomTuner />
       </ScrollView>
-    </View>
   );
 };
 
