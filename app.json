@@ -15,11 +15,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "y"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/square-logo.png", 
+        "foregroundImage": "./assets/square-logo.png",
         "backgroundColor": "#ffffff"
       }
     },

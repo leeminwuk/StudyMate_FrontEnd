@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import styles from './styles';
 import axios from 'axios';
 
 const SignupScreen = () => {
@@ -29,50 +30,46 @@ const SignupScreen = () => {
 
 
   return (
+    <View style={styles.logoContainer}>
+      <Image
+        source={require("../../../assets/loginlogo.png")}
+        style={styles.loginlogo}
+      />
       <View style={styles.signupContainer}>
+        <View style={styles.signupEmail}>
           <TextInput
-              placeholder="이메일을 입력하시오" 
-              style={styles.textInput}
-              onChangeText={setEmail}
+            placeholder="이메일을 입력하세요"
+            style={styles.textInput}
+            onChangeText={setEmail}
           />
-          <TextInput 
-              placeholder="아이디를 입력하시오" 
-              style={styles.textInput}
-              onChangeText={setUsername}
+        </View>
+
+        <View style={styles.signupUsername}>
+          <TextInput
+            placeholder="아이디를 입력하세요"
+            style={styles.textInput}
+            onChangeText={setUsername}
           />
-          <TextInput 
-              placeholder="비밀번호를 입력하시오" 
-              style={styles.textInput}
-              onChangeText={setPassword}
-              secureTextEntry
+        </View>
+        <View style={styles.signupPassword}>
+          <TextInput
+            placeholder="비밀번호를 입력하세요"
+            style={styles.textInput}
+            onChangeText={setPassword}
+            secureTextEntry
           />
-          <TouchableOpacity 
-              onPress={handleSignup} // 여기를 수정
-              style={styles.signupButton}
-          >
-              <Text>회원가입</Text>
-          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity
+          onPress={handleSignup}
+          style={styles.signupButton}
+        >
+          <Text style={styles.signupText}>회원가입하기</Text>
+        </TouchableOpacity>
       </View>
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-    signupContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    textInput: {
-        width: '80%',
-        borderColor: 'gray',
-        borderWidth: 1,
-        marginBottom: 10,
-        padding: 10,
-    },
-    signupButton: {
-        backgroundColor: 'blue',
-        padding: 10,
-    }
-});
 
 export default SignupScreen;

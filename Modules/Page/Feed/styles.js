@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
   categoryContainer: {
     marginTop: 16,
     marginLeft: 20,
+    marginBottom: 8,
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "flex-start",
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
   },
   postCategory: {
     marginTop: 16,
-    marginLeft: 16,
+    marginLeft: 8,
     paddingHorizontal: 8,
     height: 20,
     borderRadius: 5,
@@ -93,7 +94,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     letterSpacing: -0.5,
-    textAlign: "center",
   },
   postDate: {
     marginTop: Platform.OS === "ios" ? 4 : 0,

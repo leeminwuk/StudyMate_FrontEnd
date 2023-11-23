@@ -6,21 +6,95 @@ const height = window.height;
 const width = window.width;
 const styles = StyleSheet.create({
   //login
-  logincontainer: {
+  logoContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#ffffff",
   },
-  loginbuttoncontainer: {
-    marginTop: 172,
+  loginContainer: {
+    marginTop: 80,
+  },
+  emailContainer: {
+    width: 330,
+    height: 48,
+    borderRadius: 8,
+    marginBottom: 12,
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "#887E7E",
+  },
+  passwordContainer: {
+    width: 330,
+    height: 48,
+    borderRadius: 8,
+    marginBottom: 12,
+    justifyContent: "center",
+    borderWidth: 1,
+    borderColor: "#887E7E",
+  },
+  loginText: {
+    color: "#ffffff",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  inputEmail: {
+    marginLeft: 12,
+  },
+  inputPassword: {
+    marginLeft: 12,
+  },
+  loginButton: {
+    width: 330,
+    height: 48,
+    borderRadius: 8,
+    backgroundColor: "#5884E8",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  signupButton: {
+    width: 330,
+    height: 48,
+    borderRadius: 8,
+    marginTop: 12,
+    borderWidth: 1,
+    borderColor: "#5884E8",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  snsContainer: {
+    marginTop: 28,
+    marginBottom: 16,
+  },
+  snslogoContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 16,
+  },
+  googleButton: {
+    backgroundColor: "#f2f2f2",
+    width: 36,
+    height: 36,
+    borderWidth: 1,
+    borderColor: "#f2f2f2",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 18,
+  },
+  appleButton: {
+    width: 36,
+    height: 36,
+    borderWidth: 1,
+    backgroundColor: "#000000",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 18,
   },
   logo: {
     width: 100,
     height: 40,
   },
   loginlogo: {
-    marginTop: 164,
     width: 166,
     height: 152,
     resizeMode: "contain",
@@ -80,7 +154,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     paddingRight: 16,
   },
-  longContainer:{
+  longContainer: {
     height: 420,
   },
   longcustomTuner: {
@@ -108,14 +182,14 @@ const styles = StyleSheet.create({
   tutorinformationContainer: {
     justifyContent: "center",
   },
-  longtunerName:{
+  longtunerName: {
     marginTop: 16,
     marginLeft: 16,
     color: "#000",
     fontSize: 16,
     fontWeight: "600",
   },
-  longtunerSubject:{
+  longtunerSubject: {
     marginTop: 4,
     marginLeft: 16,
     color: "#5F5F5F",
@@ -128,7 +202,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  longfavoriteText:{
+  longfavoriteText: {
     color: "#5884E8",
     marginLeft: 4,
   },
@@ -144,12 +218,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-selectButtonText: {
-  color : "#ffffff",  
-  marginBottom: Platform.OS === "ios" ? 0 : 2,
-},
-   //eixtbutton
-   exitButtonContainer: {
+  selectButtonText: {
+    color: "#ffffff",
+    marginBottom: Platform.OS === "ios" ? 0 : 2,
+  },
+  //eixtbutton
+  exitButtonContainer: {
     width: "80%",
     height: Platform.OS === "ios" ? "30%" : "35%",
     backgroundColor: "#ffffff",
@@ -159,7 +233,8 @@ selectButtonText: {
     transform: [
       { translateX: -(width * 0.8) / 2 },
       { translateY: -(height * 0.35) / 2 },
-    ],    borderRadius: 10,
+    ],
+    borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
     zIndex: 1,
@@ -178,7 +253,8 @@ selectButtonText: {
     transform: [
       { translateX: -(width * 0.8) / 2 },
       { translateY: -(height * 0.35) / 2 },
-    ],    borderRadius: 10,
+    ],
+    borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
     zIndex: 1,
@@ -306,9 +382,9 @@ selectButtonText: {
   },
   centeredView: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(218, 218, 218, 0.5)', // 반투명 배경
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(218, 218, 218, 0.5)", // 반투명 배경
   },
 });
 

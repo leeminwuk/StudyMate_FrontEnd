@@ -45,6 +45,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  postTitleText: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  postName: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#000", 
+  },
+  postDate: {
+    fontSize: 14,
+    color: "#666", 
+  },
+  
   commentInputContainer: {
     width: "auto",
     height: 48,
