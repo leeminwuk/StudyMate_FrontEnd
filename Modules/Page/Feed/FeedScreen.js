@@ -23,11 +23,17 @@ const FeedScreen = ({ navigation }) => {
   const [allPosts, setAllPosts] = useState([]); // 모든 게시글 데이터
   const [filteredPosts, setFilteredPosts] = useState([]); // 필터링된 게시글 데이터
   const [pressedId, setPressedId] = useState("1");
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    console.log("Current user:", user);  // Add this line for debugging
+
+    const fetchUserPosts = async () => {
+      if (user && user.id) {  // Check if user and user.id are defined
+
       try {
-        const response = await axios.get('http://localhost:8000/api/board/all');
+        const userId = user.id; // 전역 상태에서 사용자 ID 가져오기
+        const response = await axios.get('http://10.102.2.182:8000/api/board/all');
         if (Array.isArray(response.data)) {
           setAllPosts(response.data);
           setFilteredPosts(response.data); // 초기 로드 시 모든 게시글 표시
@@ -37,9 +43,10 @@ const FeedScreen = ({ navigation }) => {
       } catch (error) {
         console.error("게시글 데이터 로드 실패:", error);
       }
-    };
-    fetchPosts();
-  }, []);
+    }
+  };
+    fetchUserPosts();
+  }, [user]); // 사용자 ID가 변경될 때마다 호출
 
   const handlePress = (id) => {
     setPressedId(id);
@@ -47,7 +54,7 @@ const FeedScreen = ({ navigation }) => {
 const handleFavorite = async (id) => {
   try {
     // API를 호출하여 게시글의 좋아요를 업데이트
-    await axios.post(`http://localhost:8000/api/board/${id}/like`);
+    await axios.post(`http://10.102.2.182:8000/api/board/${id}/like`);
     // 게시글 목록을 새로고침
     loadPosts();
   } catch (error) {
@@ -81,7 +88,7 @@ const handleFavorite = async (id) => {
 
   const loadPosts = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/board/all');
+      const response = await axios.get('http://10.102.2.182:8000/api/board/all');
       if (Array.isArray(response.data)) {
         // 게시글을 createDate 기준으로 내림차순 정렬
         const sortedPosts = response.data.sort((a, b) => {

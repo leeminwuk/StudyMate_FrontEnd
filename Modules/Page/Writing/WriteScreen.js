@@ -64,7 +64,7 @@ const WriteScreen = () => {
   };
   const uploadPost = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api/board', {
+      const response = await axios.post('http://10.102.2.182:8000/api/board', {
         title, // 제목
         content, // 내용
         category, // 카테고리

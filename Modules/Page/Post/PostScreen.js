@@ -7,32 +7,66 @@ import CommentBox from './CommentBox';
 import { ScrollView } from "react-native";
 import { useData } from '../../DataContext';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import axios from 'axios';
+import {useUser} from '../../UserContext/UserContext';
 
 const PostScreen = ({ route }) => {
-  const navigation = useNavigation();
   const { updateFavoriteCount } = useData();
+  const { user } = useUser(); // useUser 훅을 사용하여 user 객체 가져오기
+  const username = user?.username; // user 객체에서 username 추출
+
+  const navigation = useNavigation();
   const { post } = route.params;
   const [favoriteCount, setFavoriteCount] = useState(post.favoriteCount);
-  const [comments, setComments] = useState([]); 
+  const [comments, setComments] = useState([]);
   const [commentInput, setCommentInput] = useState("");
+
   const handleFavoritePress = () => {
     const newFavoriteCount = favoriteCount + 1;
     setFavoriteCount(newFavoriteCount);
     updateFavoriteCount(post.id, newFavoriteCount);
   };
-  
 
   const handleGoToFeedScreen = () => {
     navigation.goBack();
   };
 
-  const handleAddComment = () => {
-    if (commentInput) {
-      setComments([...comments, { name: "작성자 이름", content: commentInput }]);
-      setCommentInput("");
+  const addCommentToServer = async (boardId, userId, content) => {
+    try {
+      const replySaveRequestDto = {
+        boardId: boardId,
+        userId: userId,
+        content: content
+      };
+      await axios.post(`http://10.102.2.182:8000/api/board/${boardId}/reply`, replySaveRequestDto);
+    } catch (error) {
+      console.error("댓글 추가 실패:", error);
+    }
+  };
+  
+  const handleSendMessage = () => {
+    if (commentInput.trim().length > 0 && user) { // 'user' 객체 사용하여 로그인 확인
+      // 서버에 댓글 추가
+      addCommentToServer(post.id, user.id, commentInput)
+        .then(() => {
+          // 로컬 상태에 댓글 추가
+          const newComment = {
+            name: username, // 'username' 사용
+            content: commentInput
+          };
+          setComments([...comments, newComment]);
+          setCommentInput("");
+        })
+        .catch(error => {
+          console.error("댓글 추가 실패:", error);
+        });
+    } else if (!user) {
+      console.error("로그인한 사용자 정보가 없습니다.");
     }
   };
 
+  
+  
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.header}>
@@ -81,8 +115,13 @@ const PostScreen = ({ route }) => {
           placeholder="댓글을 입력해주세요."
           value={commentInput}
           onChangeText={setCommentInput}
-          onSubmitEditing={handleAddComment}
         />
+        <TouchableOpacity onPress={handleSendMessage}>
+          <Image
+            source={require("../../../assets/sendIcon.png")}
+            style={styles.sendIcon}
+          />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

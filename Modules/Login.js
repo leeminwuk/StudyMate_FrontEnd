@@ -11,51 +11,37 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";
+import{useUser} from '../Modules/UserContext/UserContext';
 import axios from "axios";
 
 const LoginScreen = () => {
   const navigation = useNavigation();
-
+  const { setUser } = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleLogin = () => {
-    axios
-      .post("http://localhost:8000/auth/login", {
-        email: email,
-        password: password,
-      })
-      .then((response) => {
-        if (response.status === 200 && response.data.data === 1) {
-          const username = response.data.username;
-          console.log("Navigating to HomeScreen with username:", username);
-          navigation.navigate("Main", {
-            screen: "Home",
-            params: { username: username },
-          });
 
-          console.log("로그인 성공:", response.data);
+  const handleLogin = () => {
+    axios.post("http://10.102.2.182:8000/auth/login", { email, password })
+      .then((response) => {
+        if (response.status === 200) {
+          console.log("Login successful. Username:", response.data.data.username, "ID:", response.data.data.id);
+  
+          setUser({
+            username: response.data.data.username,
+            id: response.data.data.id,
+          });
+          navigation.navigate("Main", { screen: "HomeScreen" });
           Alert.alert("로그인 성공", "환영합니다!");
         } else {
-          // 서버 응답에 따른 로그인 실패 처리
-          console.log("로그인 실패: 상태 코드", response.status);
           Alert.alert("로그인 실패", "로그인에 실패했습니다.");
         }
       })
       .catch((error) => {
-        if (error.response && error.response.status === 401) {
-          // 인증 실패 처리
-          Alert.alert("로그인 실패", "이메일 또는 비밀번호가 잘못되었습니다.");
-        } else {
-          // 기타 오류 처리
-          Alert.alert("로그인 오류", "로그인 중 오류가 발생했습니다.");
-        }
-        console.log(
-          "로그인 오류:",
-          error.response ? error.response.data : error
-        );
+        console.error("Login error:", error);
+        Alert.alert("로그인 오류", "로그인 중 오류가 발생했습니다.");
       });
   };
-
+  
   return (
     <View style={styles.logoContainer}>
       <Image

@@ -18,17 +18,19 @@ const Login2Screen = () => {
   const [password, setPassword] = useState("");
   const handleLogin = () => {
     axios
-      .post("http://localhost:8000/auth/login", {
+      .post("http://10.102.2.182:8000/auth/login", {
         email: email,
         password: password,
       })
       .then((response) => {
-        if (response.status === 200 && response.data.data === 1) {
-          const username = response.data.username;
+        const responseData = response.data;
+  
+        if (responseData.success && responseData.data === 1) {
+          const username = responseData.username;
           console.log("Navigating to HomeScreen with username:", username);
           navigation.navigate('Main', { screen: 'Home', params: { username: username } });
-
-          console.log("로그인 성공:", response.data);
+  
+          console.log("로그인 성공:", responseData);
           Alert.alert("로그인 성공", "환영합니다!");
         } else {
           // 서버 응답에 따른 로그인 실패 처리
@@ -44,12 +46,10 @@ const Login2Screen = () => {
           // 기타 오류 처리
           Alert.alert("로그인 오류", "로그인 중 오류가 발생했습니다.");
         }
-        console.log(
-          "로그인 오류:",
-          error.response ? error.response.data : error
-        );
+        console.log("로그인 오류:", error.response ? error.response.data : error);
       });
   };
+  
 
   return (
     <View style={styles.container}>

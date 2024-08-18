@@ -11,7 +11,7 @@ const SignupScreen = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const handleSignup = () => {
-    axios.post('http://localhost:8000/auth/joinProc', {
+    axios.post('http://10.102.2.182:8000/auth/joinProc', {
         email: email,
         username: username,
         password: password,

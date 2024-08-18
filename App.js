@@ -17,32 +17,43 @@ import RegistrationScreen from './Modules/Page/Registration/RegistrationScreen';
 import TutorSelectScreen from './Modules/Page/TutorSelect/TutorSelectScreen';
 import SignupScreen from './Modules/Page/Signup/SignupScreen';
 import Login2Screen from './Modules/Login2/LoginScreen';
+import { UserProvider } from './Modules/UserContext/UserContext';
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <DataProvider>
-
-    <SafeAreaProvider>
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Login" component={LoginScreen} />
-          <Stack.Screen name="HomeScreen" component={HomeScreen} />
-          <Stack.Screen name="Main" component={BottomNavigationBar} />
-          <Stack.Screen name="Notification" component={NotificationScreen} />
-          <Stack.Screen name="MoreScreen" component={MoreScreen} />
-          <Stack.Screen name="MessageScreen" component={MessageScreen} />
-          <Stack.Screen name="ChatingScreen" component={ChattingScreen} />
-          <Stack.Screen name="Feed" component={FeedScreen} />
-          <Stack.Screen name="Post" component={PostScreen} />
-          <Stack.Screen name="WriteScreen" component={WriteScreen} />
-          <Stack.Screen name="RegistrationScreen" component={RegistrationScreen} />
-          <Stack.Screen name="TutorSelectScreen" component={TutorSelectScreen} />
-          <Stack.Screen name="SignupScreen" component={SignupScreen} />
-          <Stack.Screen name="Login2Screen" component={Login2Screen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaProvider>
+      <SafeAreaProvider>
+        <UserProvider>
+          <NavigationContainer>
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
+              <Stack.Screen name="Login" component={LoginScreen} />
+              <Stack.Screen name="HomeScreen" component={HomeScreen} />
+              <Stack.Screen name="Main" component={BottomNavigationBar} />
+              <Stack.Screen
+                name="Notification"
+                component={NotificationScreen}
+              />
+              <Stack.Screen name="MoreScreen" component={MoreScreen} />
+              <Stack.Screen name="MessageScreen" component={MessageScreen} />
+              <Stack.Screen name="ChatingScreen" component={ChattingScreen} />
+              <Stack.Screen name="Feed" component={FeedScreen} />
+              <Stack.Screen name="Post" component={PostScreen} />
+              <Stack.Screen name="WriteScreen" component={WriteScreen} />
+              <Stack.Screen
+                name="RegistrationScreen"
+                component={RegistrationScreen}
+              />
+              <Stack.Screen
+                name="TutorSelectScreen"
+                component={TutorSelectScreen}
+              />
+              <Stack.Screen name="SignupScreen" component={SignupScreen} />
+              <Stack.Screen name="Login2Screen" component={Login2Screen} />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </UserProvider>
+      </SafeAreaProvider>
     </DataProvider>
   );
 };

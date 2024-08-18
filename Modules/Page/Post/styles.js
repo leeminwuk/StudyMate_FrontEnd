@@ -67,10 +67,10 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginTop: 16,
     borderRadius: 12,
-    textAlign: "center",
-    justifyContent: "center",
-    alignItems: "left",
     borderColor: "#D0D0D0",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
     borderWidth: 1,
   },
   commentBar: {
@@ -119,6 +119,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: "400",
     marginLeft: 4,
+  },
+  sendIcon: {
+    width: 24,
+    height: 24,
+    marginLeft: 12,
+    marginRight: 12,
   },
 });
 

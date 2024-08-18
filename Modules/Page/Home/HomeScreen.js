@@ -14,9 +14,11 @@ import ProgressBar from "../../ProgressBar";
 import SearchBar from "../../SearchBar";
 import CustomTuner from "../../CustomTuner";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useUser } from "../../UserContext/UserContext";
 const HomeScreen = ({ route, navigation }) => {
   const progressLevel = 80;
-  const username = route.params?.username;
+  const { user } = useUser();
+  const username = user?.username; // 'username' 변수 정의
   console.log("Username on HomeScreen:", username);
 
   const handleMore = () => {
