@@ -1,1 +1,1 @@
-# StudyMate_FrontEnd
+# K프로젝트 학과별 튜터 튜티 매칭 서비스
