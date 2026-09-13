@@ -45,5 +45,8 @@
     "@babel/core": "^7.20.0",
     "react-native-asset": "^2.1.1"
   },
-  "private": true
+  "private": true,
+  "overrides": {
+    "@xmldom/xmldom": "0.9.11"
+  }
 }
